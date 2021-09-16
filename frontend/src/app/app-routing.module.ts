@@ -1,3 +1,4 @@
+import { ProductsComponent } from './components/products/products.component';
 import { PrimsComponent } from './components/prims/prims.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'prims',
     component: PrimsComponent
+  },
+  {
+    path: 'products',
+    component: ProductsComponent
   }
 ];
 

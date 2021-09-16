@@ -10,6 +10,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { PrimsComponent } from './components/prims/prims.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PrimsComponent } from './components/prims/prims.component';
     CheckoutComponent,
     RegisterComponent,
     SingleProductComponent,
-    PrimsComponent
+    PrimsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
