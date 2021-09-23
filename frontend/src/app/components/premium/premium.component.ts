@@ -5,11 +5,12 @@ import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-single-product',
-  templateUrl: './single-product.component.html',
-  styleUrls: ['./single-product.component.css'],
+  selector: 'app-premium',
+  templateUrl: './premium.component.html',
+  styleUrls: ['./premium.component.css']
 })
-export class SingleProductComponent implements OnInit {
+export class PremiumComponent implements OnInit {
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -128,4 +129,5 @@ export class SingleProductComponent implements OnInit {
       this.isLoggedIn = false;
     }
   }
+
 }

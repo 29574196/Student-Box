@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {ToastrModule} from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +15,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { PrimsComponent } from './components/prims/prims.component';
 import { ProductsComponent } from './components/products/products.component';
+import { EssentailsComponent } from './components/essentails/essentails.component';
+import { PremiumComponent } from './components/premium/premium.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +28,19 @@ import { ProductsComponent } from './components/products/products.component';
     RegisterComponent,
     SingleProductComponent,
     PrimsComponent,
-    ProductsComponent
+    ProductsComponent,
+    EssentailsComponent,
+    PremiumComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
