@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-single-product',
@@ -15,8 +16,12 @@ export class SingleProductComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private toast: ToastrService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private prodcutService: ProductsService
   ) {}
+
+  products: ProductModelServer[] = [];
+  public product: any;
 
   cartItems: ProductModelServer[] = [];
   cartTotal = 0;
@@ -40,7 +45,9 @@ export class SingleProductComponent implements OnInit {
   };
   cartLength!: number;
   storeValue: any;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getProduct();
+  }
 
   // tslint:disable-next-line: typedef
   login() {
@@ -117,6 +124,13 @@ export class SingleProductComponent implements OnInit {
       this.spinner.hide();
     }, 3000);
     this.isLoggedIn = false;
+  }
+
+  getProduct(){
+    this.prodcutService.getSingleBook('5faa5c75f965ba16b035509c').subscribe((productList: ProductModelServer)=> {
+      this.product= productList
+      console.log(this.product);
+    })
   }
 
   // tslint:disable-next-line: typedef
