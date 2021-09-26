@@ -1,0 +1,379 @@
+<div class="modal fade login-modal-main" id="bd-example-modal">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+     <div class="modal-content">
+        <div class="modal-body">
+           <div class="login-modal">
+              <div class="row">
+                 <div class="col-lg-6 pad-right-0">
+                    <div class="login-modal-left">
+                    </div>
+                 </div>
+                 <div class="col-lg-6 pad-left-0">
+                    <button type="button" class="close close-top-right" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <form>
+                      <div class="login-modal-right">
+                         <!-- Tab panes -->
+                         <div class="tab-content">
+                            <div class="tab-pane active" id="login" role="tabpanel">
+                               <h5 class="heading-design-h5">Login to your account</h5>
+                               <fieldset class="form-group">
+                                  <label>Enter Email</label>
+                                  <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="loginData.email" required>
+                               </fieldset>
+                               <fieldset class="form-group">
+                                  <label>Enter Password</label>
+                                  <input type="password" class="form-control" placeholder="********" name="password" [(ngModel)]="loginData.password" required>
+                               </fieldset>
+                               <fieldset class="form-group">
+                                  <button type="submit" class="btn btn-lg btn-secondary btn-block" (click)="login()">Sign In</button>
+                               </fieldset>
+                               <div class="login-with-sites text-center">
+                                  <p>or Login with your social profile:</p>
+                                  <button class="btn-facebook login-icons btn-lg"><i class="mdi mdi-facebook"></i> Facebook</button>
+                                  <button class="btn-google login-icons btn-lg"><i class="mdi mdi-google"></i> Google</button>
+                               </div>
+                               <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                  <label class="custom-control-label" for="customCheck1">Remember me</label>
+                               </div>
+                            </div>
+                            <div class="tab-pane" id="register" role="tabpanel">
+                               <h5 class="heading-design-h5">Register Now!</h5>
+                               <fieldset class="form-group">
+                                  <label>Enter First Name</label>
+                                  <input type="text" class="form-control" name="name" placeholder="First Name" name="email" [(ngModel)]="registerData.first_name"required>
+                               </fieldset>
+                               <fieldset class="form-group">
+                                <label>Enter Last Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Last Name" name="email" [(ngModel)]="registerData.last_name"required>
+                             </fieldset>
+                               <fieldset class="form-group">
+                                 <label>Enter Email Address</label>
+                                 <input type="text" class="form-control" name="regEmail" placeholder="Email" [(ngModel)]="registerData.email" required>
+                              </fieldset>
+                               <fieldset class="form-group">
+                                 <label>Enter Phone Number</label>
+                                 <input type="phone" class="form-control" name="phone" placeholder="+91 123 456 7890" [(ngModel)]="registerData.phone_number" required>
+                              </fieldset>
+                               <fieldset class="form-group">
+                                  <label>Enter Password</label>
+                                  <input type="password" class="form-control" name="regPassword" placeholder="********" [(ngModel)]="registerData.password" required>
+                               </fieldset>
+                               <fieldset class="form-group">
+                                  <label>Enter Confirm Password </label>
+                                  <input type="password" class="form-control" placeholder="********" required>
+                               </fieldset>
+                               <fieldset class="form-group">
+                                  <button type="submit" class="btn btn-lg btn-secondary btn-block" (click)="register()">Sing Up</button>
+                               </fieldset>
+                               <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                  <label class="custom-control-label" for="customCheck2">I Agree with <a href="#">Term and Conditions</a></label>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="clearfix"></div>
+                         <div class="text-center login-footer-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                               <li class="nav-item">
+                                  <a class="nav-link active" data-toggle="tab" href="#login" role="tab"><i class="mdi mdi-lock"></i> LOGIN</a>
+                               </li>
+                               <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#register" role="tab"><i class="mdi mdi-pencil"></i> REGISTER</a>
+                               </li>
+                            </ul>
+                         </div>
+                         <div class="clearfix"></div>
+                      </div>
+                   </form>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<nav class="navbar navbar-light navbar-expand-lg bg-dark bg-faded osahan-menu">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="index.html"> <img src="assets/files/img/logo.png" alt="logo"> </a>
+<a class="location-top" href="#"><i class="mdi mdi-map-marker-circle" aria-hidden="true"></i> New York</a>
+     <button class="navbar-toggler navbar-toggler-white" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="navbar-collapse" id="navbarNavDropdown">
+        <!-- <div class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto top-categories-search-main">
+           <div class="top-categories-search">
+              <div class="input-group">
+                 <span class="input-group-btn categories-dropdown">
+                    <select class="form-control-select">
+                       <option selected="selected">Your City</option>
+                       <option value="0">New Delhi</option>
+                       <option value="2">Bengaluru</option>
+                       <option value="3">Hyderabad</option>
+                       <option value="4">Kolkata</option>
+                    </select>
+                 </span>
+                 <input class="form-control" placeholder="Search products in Your City" aria-label="Search products in Your City" type="text">
+                 <span class="input-group-btn">
+                 <button class="btn btn-secondary" type="button"><i class="mdi mdi-file-find"></i> Search</button>
+                 </span>
+              </div>
+           </div>
+        </div> -->
+        <div class="my-2 my-lg-0">
+           <ul class="list-inline main-nav-right">
+              <li class="list-inline-item">
+                 <a href="#" data-target="#bd-example-modal" data-toggle="modal" class="btn btn-link"><i class="mdi mdi-account-circle"></i> Login/Sign Up</a>
+              </li>
+              <li class="list-inline-item cart-btn">
+                 <a data-toggle="offcanvas" class="btn btn-link border-none"><i class="mdi mdi-cart"></i> My Cart <small class="cart-value">1</small></a>
+              </li>
+           </ul>
+        </div>
+     </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light osahan-menu-2 pad-none-mobile mb-0">
+  <div class="container-fluid">
+     <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto">
+           <li class="nav-item">
+              <a class="nav-link shop" href="index.html"><span class="mdi mdi-store"></span> Super Store</a>
+           </li>
+   <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+           </li>
+   <li class="nav-item">
+              <a href="about.html" class="nav-link">About Us</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="shop.html">Fruits & Vegetables</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="shop.html">Grocery & Staples</a>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pages
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="shop.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Shop Grid</a>
+                 <a class="dropdown-item" href="single.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Single Product</a>
+                 <a class="dropdown-item" href="cart.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Shopping Cart</a>
+                 <a class="dropdown-item" href="checkout.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Checkout</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="my-profile.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  My Profile</a>
+                 <a class="dropdown-item" href="my-address.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  My Address</a>
+                 <a class="dropdown-item" href="wishlist.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Wish List </a>
+                 <a class="dropdown-item" href="orderlist.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Order List</a>
+              </div>
+           </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Blog Page
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="blog.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Blog</a>
+                 <a class="dropdown-item" href="blog-detail.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Blog Detail</a>
+              </div>
+           </li>
+   <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More Pages
+              </a>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="about.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  About Us</a>
+                 <a class="dropdown-item" href="contact.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Contact Us</a>
+                 <a class="dropdown-item" href="faq.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  FAQ </a>
+                 <a class="dropdown-item" href="not-found.html"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  404 Error</a>
+              </div>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+           </li>
+        </ul>
+     </div>
+  </div>
+</nav>
+<section class="pt-3 pb-3 page-info section-padding border-bottom bg-white">
+  <div class="container">
+     <div class="row">
+        <div class="col-md-12">
+           <a href="#"><strong><span class="mdi mdi-home"></span> Home</strong></a> <span class="mdi mdi-chevron-right"></span> <a href="#">Fruits & Vegetables</a> <span class="mdi mdi-chevron-right"></span> <a href="#">Fruits</a>
+        </div>
+     </div>
+  </div>
+</section>
+<section class="shop-single section-padding pt-3">
+  <div class="container">
+     <div class="row">
+        <div class="col-md-6">
+           <div class="shop-detail-left">
+              <div class="shop-detail-slider">
+                 <div class="favourite-icon">
+                    <a class="fav-btn" title="" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="59% OFF"><i class="mdi mdi-tag-outline"></i></a>
+                 </div>
+                 <div id="sync1" class="owl-carousel">
+                    <div class="item"><img alt="" src="../../../assets/images/2.jpg" class="img-fluid img-center"></div>
+                    <!-- <div class="item"><img alt="" src="../../../assets/files/img/item/2.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/3.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/4.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/5.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/6.jpg" class="img-fluid img-center"></div> -->
+                 </div>
+                 <div id="sync2" class="owl-carousel">
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/1.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/2.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/3.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/4.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/5.jpg" class="img-fluid img-center"></div>
+                    <div class="item"><img alt="" src="../../../assets/files/img/item/6.jpg" class="img-fluid img-center"></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-6">
+           <div class="shop-detail-right">
+              <h2>Essentials +</h2>
+              <p class="offer-price mb-0">Product price : <span class="text-success">R179.99</span></p>
+              <a href="checkout.html"><button type="button" class="btn btn-secondary btn-lg"><i class="mdi mdi-cart-outline"></i> Add To Cart</button> </a>
+              <div class="short-description">
+                 <h5>
+                    Quick Overview
+                    <p class="float-right">Availability: <span class="badge badge-success">In Stock</span></p>
+                 </h5>
+                 <p><br><ul>
+                  <li><b style="font-size: 20px;">Strawberries</b></li>
+                  <li>Lettuce</li>
+                  <li>Tomatoes</li>
+                  <li>Cucumber</li>
+                  <li>Robot Peppers</li>
+                  <li>Apples</li>
+                  <li>Spinach</li>
+                  <li>Potatoes</li>
+                  <li>Onions</li>
+                  <li>Carrots</li>
+                </ul>
+                 </p>
+                 <p class="mb-0"> Vivamus adipiscing nisl ut dolor dignissim semper.</p>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+<section class="product-items-slider section-padding bg-white border-top">
+  <div class="container">
+     <div class="section-header">
+        <h5 class="heading-design-h5">Other Offers <span class="badge badge-primary">20% OFF</span>
+           <a class="float-right text-secondary">View All</a>
+        </h5>
+     </div>
+     <div class="owl-carousel owl-carousel-featured">
+        <div class="item">
+           <div class="product">
+              <a href="shop.html">
+                 <div class="product-header">
+                    <span class="badge badge-success">50% OFF</span>
+                    <img class="img-fluid" src="../../../assets/files/img/item/7.jpg" alt="">
+                    <span class="veg text-success mdi mdi-circle"></span>
+                 </div>
+                 <div class="product-body">
+                    <h5>Student Box - Essentials</h5>
+                    <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+                 </div>
+                 <div class="product-footer">
+                    <button type="button" class="btn btn-secondary btn-sm float-right"><i class="mdi mdi-cart-outline"></i> Add To Cart</button>
+                    <p class="offer-price mb-0">R139.99 <i class="mdi mdi-tag-outline"></i></p>
+                 </div>
+              </a>
+           </div>
+        </div>
+        <div class="item">
+           <div class="product">
+              <a href="shop.html">
+                 <div class="product-header">
+                    <span class="badge badge-success">50% OFF</span>
+                    <img class="img-fluid" src="../../../assets/files/img/item/8.jpg" alt="">
+                    <span class="non-veg text-danger mdi mdi-circle"></span>
+                 </div>
+                 <div class="product-body">
+                    <h5>Student Box - Premuim</h5>
+                    <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+                 </div>
+                 <div class="product-footer">
+                    <button type="button" class="btn btn-secondary btn-sm float-right"><i class="mdi mdi-cart-outline"></i> Add To Cart</button>
+                    <p class="offer-price mb-0">R249.99 <i class="mdi mdi-tag-outline"></i></p>
+                 </div>
+              </a>
+           </div>
+        </div>
+
+     </div>
+  </div>
+</section>
+<section class="section-padding bg-white border-top">
+  <div class="container">
+     <div class="row">
+        <div class="col-lg-4 col-sm-6">
+           <div class="feature-box">
+              <i class="mdi mdi-truck-fast"></i>
+              <h6>Free & Next Day Delivery</h6>
+              <p>Lorem ipsum dolor sit amet, cons...</p>
+           </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+           <div class="feature-box">
+              <i class="mdi mdi-basket"></i>
+              <h6>100% Satisfaction Guarantee</h6>
+              <p>Rorem Ipsum Dolor sit amet, cons...</p>
+           </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+           <div class="feature-box">
+              <i class="mdi mdi-tag-heart"></i>
+              <h6>Great Daily Deals Discount</h6>
+              <p>Sorem Ipsum Dolor sit amet, Cons...</p>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+
+<div class="cart-sidebar">
+  <div class="cart-sidebar-header">
+     <h5>
+        My Cart <span class="text-success">(1 item)</span> <a data-toggle="offcanvas" class="float-right"><i class="mdi mdi-close"></i>
+        </a>
+     </h5>
+  </div>
+  <div class="cart-sidebar-body">
+     <div class="cart-list-product">
+        <a class="float-right remove-cart" href="#"><i class="mdi mdi-close"></i></a>
+        <img class="img-fluid" src="assets/files/img/item/11.jpg" alt="">
+
+        <h5><a href="#">Product Title Here</a></h5>
+        <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+        <p class="offer-price mb-0">$450.99 <i class="mdi mdi-tag-outline"></i> </p>
+     </div>
+
+  </div>
+  <div class="cart-sidebar-footer">
+     <div class="cart-store-details">
+        <p>Sub Total <strong class="float-right">$900.69</strong></p>
+        <p>Delivery Charges <strong class="float-right text-danger">+ $29.69</strong></p>
+        <h6>Your total savings <strong class="float-right text-danger">$55 (42.31%)</strong></h6>
+     </div>
+     <a href="checkout.html"><button class="btn btn-secondary btn-lg btn-block text-left" type="button"><span class="float-left"><i class="mdi mdi-cart-outline"></i> Proceed to Checkout </span><span class="float-right"><strong>$1200.69</strong> <span class="mdi mdi-chevron-right"></span></span></button></a>
+  </div>
+</div>
+

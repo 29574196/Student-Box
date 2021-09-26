@@ -3,19 +3,18 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-single-product',
-  templateUrl: './single-product.component.html',
-  styleUrls: ['./single-product.component.css'],
+  selector: 'app-premium',
+  templateUrl: './premium.component.html',
+  styleUrls: ['./premium.component.css']
 })
-export class SingleProductComponent implements OnInit {
+export class PremiumComponent implements OnInit {
+
   constructor(
     private router: Router,
     private authService: AuthService,
-    private toast: ToastrService,
-    private spinner: NgxSpinnerService
+    private toast: ToastrService
   ) {}
 
   cartItems: ProductModelServer[] = [];
@@ -80,44 +79,44 @@ export class SingleProductComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  reset() {
-    this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.toast.success(
-        `${this.loginData.email} successfully logged in.`,
-        'Welcome back!',
-        {
-          timeOut: 1500,
-          progressBar: true,
-          progressAnimation: 'increasing',
-          positionClass: 'toast-top-right',
-        }
-      );
-      this.spinner.hide();
-    }, 2000);
-    this.ngOnInit();
-  }
+  // reset() {
+  //   this.spinner.show();
+  //   setTimeout(() => {
+  //     /** spinner ends after 5 seconds */
+  //     this.toast.success(
+  //       `${this.loginData.email} successfully logged in.`,
+  //       'Welcome back!',
+  //       {
+  //         timeOut: 1500,
+  //         progressBar: true,
+  //         progressAnimation: 'increasing',
+  //         positionClass: 'toast-top-right',
+  //       }
+  //     );
+  //     this.spinner.hide();
+  //   }, 2000);
+  //   this.ngOnInit();
+  // }
 
-  signOut() {
-    this.authService.logoutUser();
-    this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.toast.error(
-        `${this.loginData.email} successfully logged off.`,
-        'Signed Out!',
-        {
-          timeOut: 3000,
-          progressBar: true,
-          progressAnimation: 'increasing',
-          positionClass: 'toast-top-right',
-        }
-      );
-      this.spinner.hide();
-    }, 3000);
-    this.isLoggedIn = false;
-  }
+  // signOut() {
+  //   this.authService.logoutUser();
+  //   this.spinner.show();
+  //   setTimeout(() => {
+  //     /** spinner ends after 5 seconds */
+  //     this.toast.error(
+  //       `${this.loginData.email} successfully logged off.`,
+  //       'Signed Out!',
+  //       {
+  //         timeOut: 3000,
+  //         progressBar: true,
+  //         progressAnimation: 'increasing',
+  //         positionClass: 'toast-top-right',
+  //       }
+  //     );
+  //     this.spinner.hide();
+  //   }, 3000);
+  //   this.isLoggedIn = false;
+  // }
 
   // tslint:disable-next-line: typedef
   loggedIn() {
@@ -130,4 +129,5 @@ export class SingleProductComponent implements OnInit {
       this.isLoggedIn = false;
     }
   }
+
 }
