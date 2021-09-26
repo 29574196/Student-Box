@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-single-product',
-  templateUrl: './single-product.component.html',
-  styleUrls: ['./single-product.component.css'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class SingleProductComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -130,4 +130,5 @@ export class SingleProductComponent implements OnInit {
       this.isLoggedIn = false;
     }
   }
+
 }

@@ -4,6 +4,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { PrimsComponent } from './components/prims/prims.component';
 import { ProductsComponent } from './components/products/products.component';
 import { EssentailsComponent } from './components/essentails/essentails.component';
 import { PremiumComponent } from './components/premium/premium.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { PremiumComponent } from './components/premium/premium.component';
     PrimsComponent,
     ProductsComponent,
     EssentailsComponent,
-    PremiumComponent
+    PremiumComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { PremiumComponent } from './components/premium/premium.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
