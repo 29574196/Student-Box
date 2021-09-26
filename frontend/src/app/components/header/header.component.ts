@@ -1,3 +1,5 @@
+import { OrderService } from './../../services/order.service';
+import { MessangerService } from './../../services/messanger.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -15,7 +17,9 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private toast: ToastrService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private msg: MessangerService,
+    private order: OrderService
   ) {}
 
   cartItems: ProductModelServer[] = [];
@@ -38,9 +42,34 @@ export class HeaderComponent implements OnInit {
     email: '',
     password: '',
   };
-  cartLength!: number;
+  cartLength!: any;
   storeValue: any;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cartItems = this.msg.getCartItems();
+    // this.cartTotal = this.msg.getTotal();
+    this.order.currentSize.subscribe((cartS) => {
+      if (cartS === '0') {
+        this.cartLength = this.cartItems.length;
+      } else {
+        this.cartLength = cartS;
+      }
+      console.log(cartS);
+    });
+    this.order.currentTotal.subscribe((cartT) => {
+      if (cartT === 0) {
+        this.cartTotal = this.msg.getTotal();
+      } else {
+        this.cartTotal = cartT;
+      }
+    });
+    this.order.currentItems.subscribe((cartItems) => {
+      if(cartItems.length === 0){
+       this.cartItems = this.msg.getCartItems();
+      }
+      else
+        this.cartItems = cartItems;
+    });
+  }
 
   // tslint:disable-next-line: typedef
   login() {
@@ -97,6 +126,14 @@ export class HeaderComponent implements OnInit {
       this.spinner.hide();
     }, 2000);
     this.ngOnInit();
+  }
+
+  removeCartItem(i: any){
+    this.cartItems.splice(i,1);
+    this.order.changeItems(this.cartItems);
+    this.msg.updateCartItems(this.cartItems);
+    this.cartLength = this.cartItems.length;
+    this.cartTotal = this.msg.getTotal();
   }
 
   signOut() {
