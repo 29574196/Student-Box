@@ -38,9 +38,9 @@
         </div>
         <div class="col-md-6">
            <div class="shop-detail-right">
-              <h2>Essentials +</h2>
-              <p class="offer-price mb-0">Product price : <span class="text-success">{{product.price}}</span></p>
-              <a href="checkout.html"><button type="button" class="btn btn-secondary btn-lg"><i class="mdi mdi-cart-outline"></i> Add To Cart</button> </a>
+              <h2>Student Box - {{product.title}}</h2>
+              <p class="offer-price mb-0">Product price : <span class="text-success">R{{product.price}}</span></p>
+              <a><button type="button" class="btn btn-secondary btn-lg" (click)="handleAddToCart()"><i class="mdi mdi-cart-outline"></i> Add To Cart</button> </a>
               <div class="short-description">
                  <h5>
                     Quick Overview

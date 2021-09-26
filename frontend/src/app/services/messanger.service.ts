@@ -18,7 +18,7 @@ export class MessangerService {
     // We want to send the product item itself when the add to cart button is clicked..
     let tempProduct = [];
     if (localStorage.getItem('cart')){
-      tempProduct = JSON.parse(localStorage.getItem('cart'));
+      tempProduct = JSON.parse(localStorage.getItem('cart')|| '{}');
       tempProduct.push(product);
       this.items = tempProduct;
       //console.log('hey   ' + tempProduct);
@@ -43,7 +43,7 @@ export class MessangerService {
 
   // tslint:disable-next-line: typedef
   getCartItems(){
-    const items = JSON.parse(localStorage.getItem('cart'));
+    const items = JSON.parse(localStorage.getItem('cart')|| '{}');
     this.cartTotal = 0;
     const cartItems: any[] = [];
     items.forEach((element: any) => {
