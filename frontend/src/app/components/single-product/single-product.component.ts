@@ -52,11 +52,16 @@ export class SingleProductComponent implements OnInit {
       progressAnimation: 'increasing',
       positionClass: 'toast-top-right'
     });
+    this.ngOnInit();
   }
 
   updateCart(){
     this.orderService.changeSize(''+this.msg.getCartItems().length);
     console.log(this.msg.getCartItems().length);
+  }
+
+  reload(){
+    this.ngOnInit();
   }
 
 }
