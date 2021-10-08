@@ -39,7 +39,7 @@ export class CheckoutComponent implements OnInit {
 
   orderData = {
     user: '',
-    items:[] = [],
+    items: Array(),
     totalPrice: 0,
     address1:'',
     notes: '',
@@ -96,24 +96,27 @@ export class CheckoutComponent implements OnInit {
   makeOrder(){
     // this.orderData.items = this.cartItems;
     console.log(this.cartItems);
-    const result = [];
+    // const result = [];
     this.orderData.totalPrice = this.cartTotal;
     for(let item of this.cartItems){
       // this.orderData.items.push(item._id);
       
-      result.push(item._id);
-      console.log(result);
-      this.orderData.items.push(result)
+      // result.push(item._id);
+      // console.log(result);
+      this.orderData.items.push(item._id);
     }
-    // this.order.postOrder(this.orderData).subscribe(res=>{
+    console.log(this.orderData.items);
+    this.orderData.user = '614a3df17c31b116b8c8fd7e';
+    this.orderData.totalPrice = this.cartTotal;
+    this.orderData.address1 = '7 Silver Street'
+    this.order.postOrder(this.orderData).subscribe(res=>{
   
-    //   console.log(this.data.item_name);
-    //   this.showCheckout = true;
-    // },err=>{
-    //   //dont allow payment
-    //   //disable payment button
-    //   this.data.item_name = "";
-    // })
+      console.log(this.data.item_name);
+    },err=>{
+      //dont allow payment
+      //disable payment button
+      this.data.item_name = "";
+    })
   }
 
 }

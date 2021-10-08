@@ -34,7 +34,7 @@ export class OrderService {
   }
   // tslint:disable-next-line: typedef
   postOrder(order: any){
-    return this.http.post(this.orderUrl, order);
+    return this.http.post<any>(this.orderUrl, order);
   }
 
   // tslint:disable-next-line: typedef
