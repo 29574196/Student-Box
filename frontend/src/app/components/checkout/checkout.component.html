@@ -10,9 +10,9 @@
 <section class="checkout-page section-padding">
   <div class="container">
      <div class="row">
-        
+
         <div class="col-md-8">
-         
+
            <div class="checkout-step">
               <div class="accordion" id="accordionExample">
                  <div class="card checkout-step-one">
@@ -71,22 +71,22 @@
                                 </div>
                              </div>
                              <div class="row">
-                                
+
                                 <div class="col-sm-6">
                                    <div class="form-group">
                                       <label class="control-label">Email Address <span class="required">*</span></label>
-                                      <input [(ngModel)]="data.email_address" name="email_address" class="form-control border-form-control " value="" placeholder="iamosahan@gmail.com" disabled="" type="email">
+                                      <input [(ngModel)]="data.email_address" name="email_address" class="form-control border-form-control " value="" placeholder="iamosahan@gmail.com"  type="email">
                                    </div>
                                 </div>
                              </div>
                              <div class="row">
-                                
+
                                 <div class="col-sm-6">
                                    <div class="form-group">
                                       <label class="control-label">City <span class="required">*</span></label>
                                       <select class="select2 form-control border-form-control">
                                          <option disabled="">Potchefstroom</option>
-                                         
+
                                       </select>
                                    </div>
                                 </div>
@@ -102,12 +102,12 @@
                                    </div>
                                 </div>
                              </div>
-                             
+
                              <div class="custom-control custom-checkbox mb-3">
                                 <input type="checkbox" class="custom-control-input" id="customCheckbill">
                                 <label class="custom-control-label" for="customCheckbill">Use my delivery address as my billing address</label>
                              </div>
-                             <button type="button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-secondary mb-2 btn-lg">NEXT</button>
+                             <button type="button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-secondary mb-2 btn-lg" >NEXT</button>
                           </form>
                        </div>
                     </div>
@@ -149,13 +149,14 @@
                                    </div>
                                 </div>
                              </div>
+
                              <hr>
                              <div class="custom-control custom-radio">
                                 <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadio1">Would you like to pay by Cash on Delivery?</label>
                              </div>
                              <p>Vestibulum semper accumsan nisi, at blandit tortor maxi'mus in phasellus malesuada sodales odio, at dapibus libero malesuada quis.</p>
-                             <button type="button" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour" class="btn btn-secondary mb-2 btn-lg" (click)="makeOrder()">NEXT</button>
+                             <button type="submit"  data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour" class="btn btn-secondary mb-2 btn-lg">NEXT</button>
                           </form>
                        </div>
                     </div>
@@ -178,8 +179,27 @@
                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, Sed ex est, consectetur eget consectetur, Lorem ipsum dolor sit amet...
                                 </p>
                              </div>
+                             <form action="https://www.payfast.co.za/eng/process" method="post" #form>
+                              <input
+                                        type="hidden"
+                                        name="merchant_id"
+                                        value="12276456"
+                                        />
+                                    <input
+                                        type="hidden"
+                                        name="merchant_key"
+                                        value="lpk4o6pztf5n8"
+                                        />
+                              <input type="hidden" name="amount" value="{{data.cost}}">
+                              <input type="hidden" name="item_name" value="{{data.item_name}}">
+                              <input type="hidden" name="name_first" value="{{data.name_first}}">
+                              <input type="hidden" name="name_last" value="{{data.name_last}}">
+                              <input type="hidden" name="email_address" value={{data.email_address}}>
+                              <input type="hidden" name="cell_number" value={{data.cell_number}}>
+
+                           </form>
                              <div class="text-center">
-                                <a href="shop.html"><button type="submit" class="btn btn-secondary mb-2 btn-lg">Return to store</button></a>
+                                <a><button type="submit" class="btn btn-secondary mb-2 btn-lg" (click)="form.submit()">Return to store</button></a>
                              </div>
                           </div>
                        </div>
@@ -187,8 +207,9 @@
                  </div>
               </div>
            </div>
-          
+
         </div>
+
         <div class="col-md-4">
            <div class="card">
               <h5 class="card-header">My Cart <span class="text-secondary float-right">{{cartLength}}</span></h5>

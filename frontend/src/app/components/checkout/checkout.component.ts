@@ -34,7 +34,7 @@ export class CheckoutComponent implements OnInit {
     notify_url:"https://secondchancebooks.co.za/api/payfast-confirmation",
     cell_number:"",
     cost:0,
-    item_name:''
+    item_name:'The Student Box: '
   }
 
   orderData = {
@@ -71,7 +71,8 @@ export class CheckoutComponent implements OnInit {
       else
         this.cartItems = cartItems;
     });
-    this.makeOrder();
+    this.data.cost = this.cartTotal;
+    this.data.item_name = "Premium";
   }
 
   removeCartItem(i: any){
@@ -100,17 +101,17 @@ export class CheckoutComponent implements OnInit {
     this.orderData.totalPrice = this.cartTotal;
     for(let item of this.cartItems){
       // this.orderData.items.push(item._id);
-      
+
       // result.push(item._id);
       // console.log(result);
-      this.orderData.items.push(item._id);
+      this.orderData.items.push(item.title);
     }
     console.log(this.orderData.items);
     this.orderData.user = '614a3df17c31b116b8c8fd7e';
     this.orderData.totalPrice = this.cartTotal;
     this.orderData.address1 = '7 Silver Street'
     this.order.postOrder(this.orderData).subscribe(res=>{
-  
+
       console.log(this.data.item_name);
     },err=>{
       //dont allow payment
