@@ -19,6 +19,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { EssentailsComponent } from './components/essentails/essentails.component';
 import { PremiumComponent } from './components/premium/premium.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ErrorComponent } from './components/error/error.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CartTableComponent } from './components/cart/cart-table/cart-table.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { HeaderComponent } from './components/header/header.component';
     ProductsComponent,
     EssentailsComponent,
     PremiumComponent,
-    HeaderComponent
+    HeaderComponent,
+    ErrorComponent,
+    AboutUsComponent,
+    CartTableComponent
   ],
   imports: [
     BrowserModule,

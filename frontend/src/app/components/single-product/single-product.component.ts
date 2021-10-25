@@ -40,6 +40,7 @@ export class SingleProductComponent implements OnInit {
     this.prodcutService.getSingleBook('5faa5c75f965ba16b035509c').subscribe((productList: ProductModelServer)=> {
       this.product= productList
       console.log(this.product);
+
     })
   }
 

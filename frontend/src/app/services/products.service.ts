@@ -19,6 +19,7 @@ export class ProductsService {
   }
 
   getSingleBook(id: String): Observable<ProductModelServer>{
+    console.log(id);
     return this.http.get<ProductModelServer>(this.SERVER_URL + '/' + id);
   }
 }
