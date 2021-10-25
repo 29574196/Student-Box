@@ -1,14 +1,5 @@
-export interface ProductModelServer {
-  // tslint:disable-next-line: ban-types
-  _id: string;
-  // tslint:disable-next-line: ban-types
-  title: string;
-  // image: string;
-  price: number;
-  description: [];
-  // category: string;
-  // subcategory: string;
-  // store: number;
-  // quantity: number;
+export class ProductModelServer {
+  constructor(public _id:number, public title: string,public description: string, public price:number,
+    public quantity:number){}
 
 }

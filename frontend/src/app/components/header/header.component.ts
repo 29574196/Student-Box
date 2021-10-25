@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +19,9 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService,
     private toast: ToastrService,
     private spinner: NgxSpinnerService,
-    private msg: MessangerService,
-    private order: OrderService
+    private cartService: CartService
+    // private msg: MessangerService,
+    // private order: OrderService
   ) {}
 
   cartItems: ProductModelServer[] = [];
@@ -42,32 +44,34 @@ export class HeaderComponent implements OnInit {
     email: '',
     password: '',
   };
-  cartLength!: any;
-  storeValue: any;
+  itemInCart!: Number;
   ngOnInit(): void {
-    this.cartItems = this.msg.getCartItems();
-    // this.cartTotal = this.msg.getTotal();
-    this.order.currentSize.subscribe((cartS) => {
-      if (cartS === '0') {
-        this.cartLength = this.cartItems.length;
-      } else {
-        this.cartLength = cartS;
-      }
-      console.log(cartS);
-    });
-    this.order.currentTotal.subscribe((cartT) => {
-      if (cartT === 0) {
-        this.cartTotal = this.msg.getTotal();
-      } else {
-        this.cartTotal = cartT;
-      }
-    });
-    this.order.currentItems.subscribe((cartItems) => {
-      if(cartItems.length === 0){
-       this.cartItems = this.msg.getCartItems();
-      }
-      else
-        this.cartItems = cartItems;
+    // this.cartItems = this.msg.getCartItems();
+    // // this.cartTotal = this.msg.getTotal();
+    // this.order.currentSize.subscribe((cartS) => {
+    //   if (cartS === '0') {
+    //     this.cartLength = this.cartItems.length;
+    //   } else {
+    //     this.cartLength = cartS;
+    //   }
+    //   console.log(cartS);
+    // });
+    // this.order.currentTotal.subscribe((cartT) => {
+    //   if (cartT === 0) {
+    //     this.cartTotal = this.msg.getTotal();
+    //   } else {
+    //     this.cartTotal = cartT;
+    //   }
+    // });
+    // this.order.currentItems.subscribe((cartItems) => {
+    //   if(cartItems.length === 0){
+    //    this.cartItems = this.msg.getCartItems();
+    //   }
+    //   else
+    //     this.cartItems = cartItems;
+    // });
+    this.cartService.cartItems.subscribe(d=> {
+      this.itemInCart = d.length;
     });
   }
 
@@ -129,11 +133,11 @@ export class HeaderComponent implements OnInit {
   }
 
   removeCartItem(i: any){
-    this.cartItems.splice(i,1);
-    this.order.changeItems(this.cartItems);
-    this.msg.updateCartItems(this.cartItems);
-    this.cartLength = this.cartItems.length;
-    this.cartTotal = this.msg.getTotal();
+    // this.cartItems.splice(i,1);
+    // this.order.changeItems(this.cartItems);
+    // this.msg.updateCartItems(this.cartItems);
+    // this.cartLength = this.cartItems.length;
+    // this.cartTotal = this.msg.getTotal();
   }
 
   signOut() {

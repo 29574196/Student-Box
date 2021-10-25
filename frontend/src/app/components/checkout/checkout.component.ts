@@ -16,8 +16,9 @@ export class CheckoutComponent implements OnInit {
   isLoggedIn = true;
   showCheckout: boolean = false;
 
-  constructor(private msg: MessangerService,
-              private order: OrderService,
+  constructor(
+    // private msg: MessangerService,
+    //           private order: OrderService,
               private authService: AuthService) { }
 
   cartLength!: any;
@@ -47,40 +48,40 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cartItems = this.msg.getCartItems();
-    // this.cartTotal = this.msg.getTotal();
-    this.order.currentSize.subscribe((cartS) => {
-      if (cartS === '0') {
-        this.cartLength = this.cartItems.length;
-      } else {
-        this.cartLength = cartS;
-      }
-      console.log(cartS);
-    });
-    this.order.currentTotal.subscribe((cartT) => {
-      if (cartT === 0) {
-        this.cartTotal = this.msg.getTotal();
-      } else {
-        this.cartTotal = cartT;
-      }
-    });
-    this.order.currentItems.subscribe((cartItems) => {
-      if(cartItems.length === 0){
-       this.cartItems = this.msg.getCartItems();
-      }
-      else
-        this.cartItems = cartItems;
-    });
+    // this.cartItems = this.msg.getCartItems();
+    // // this.cartTotal = this.msg.getTotal();
+    // this.order.currentSize.subscribe((cartS) => {
+    //   if (cartS === '0') {
+    //     this.cartLength = this.cartItems.length;
+    //   } else {
+    //     this.cartLength = cartS;
+    //   }
+    //   console.log(cartS);
+    // });
+    // this.order.currentTotal.subscribe((cartT) => {
+    //   if (cartT === 0) {
+    //     this.cartTotal = this.msg.getTotal();
+    //   } else {
+    //     this.cartTotal = cartT;
+    //   }
+    // });
+    // this.order.currentItems.subscribe((cartItems) => {
+    //   if(cartItems.length === 0){
+    //    this.cartItems = this.msg.getCartItems();
+    //   }
+    //   else
+    //     this.cartItems = cartItems;
+    // });
     this.data.cost = this.cartTotal;
     this.data.item_name = "Premium";
   }
 
   removeCartItem(i: any){
-    this.cartItems.splice(i,1);
-    this.order.changeItems(this.cartItems);
-    this.msg.updateCartItems(this.cartItems);
-    this.cartLength = this.cartItems.length;
-    this.cartTotal = this.msg.getTotal();
+    // this.cartItems.splice(i,1);
+    // this.order.changeItems(this.cartItems);
+    // this.msg.updateCartItems(this.cartItems);
+    // this.cartLength = this.cartItems.length;
+    // this.cartTotal = this.msg.getTotal();
   }
 
   loggedIn() {
@@ -110,14 +111,14 @@ export class CheckoutComponent implements OnInit {
     this.orderData.user = '614a3df17c31b116b8c8fd7e';
     this.orderData.totalPrice = this.cartTotal;
     this.orderData.address1 = '7 Silver Street'
-    this.order.postOrder(this.orderData).subscribe(res=>{
+    // this.order.postOrder(this.orderData).subscribe(res=>{
 
-      console.log(this.data.item_name);
-    },err=>{
-      //dont allow payment
-      //disable payment button
-      this.data.item_name = "";
-    })
+    //   console.log(this.data.item_name);
+    // },err=>{
+    //   //dont allow payment
+    //   //disable payment button
+    //   this.data.item_name = "";
+    // })
   }
 
 }

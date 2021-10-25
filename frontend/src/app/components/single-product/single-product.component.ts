@@ -7,6 +7,7 @@ import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ProductsService } from 'src/app/services/products.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-single-product',
@@ -21,7 +22,8 @@ export class SingleProductComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private prodcutService: ProductsService,
     private msg: MessangerService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private cartService: CartService
   ) {}
 
   products: ProductModelServer[] = [];
@@ -45,7 +47,8 @@ export class SingleProductComponent implements OnInit {
   }
 
   handleAddToCart(){
-    this.msg.sendMsg(this.product);
+    // this.msg.sendMsg(this.product);
+    this.cartService.addItem(this.product)
 
     this.toast.success(`${this.product.title} added to the cart.`, 'Item Added', {
       timeOut: 1500,
@@ -56,10 +59,10 @@ export class SingleProductComponent implements OnInit {
     this.ngOnInit();
   }
 
-  updateCart(){
-    this.orderService.changeSize(''+this.msg.getCartItems().length);
-    console.log(this.msg.getCartItems().length);
-  }
+  // updateCart(){
+  //   this.orderService.changeSize(''+this.msg.getCartItems().length);
+  //   console.log(this.msg.getCartItems().length);
+  // }
 
   reload(){
     this.ngOnInit();

@@ -4,6 +4,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ProductModelServer } from 'src/app/models/Product';
 import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 import { MessangerService } from 'src/app/services/messanger.service';
 import { OrderService } from 'src/app/services/order.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -21,7 +22,8 @@ export class EssentailsComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private prodcutService: ProductsService,
     private msg: MessangerService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private cartService: CartService
   ) {}
 
   products: ProductModelServer[] = [];
@@ -34,26 +36,19 @@ export class EssentailsComponent implements OnInit {
   cartLength!: number;
   ngOnInit(): void {
     this.getProduct();
-
   }
 
   getProduct(){
-    this.prodcutService.getSingleBook('5faa5d3ff965ba16b035509d').subscribe((productList: ProductModelServer)=> {
+    this.prodcutService.getSingleBook('5faa5c75f965ba16b035509c').subscribe((productList: ProductModelServer)=> {
       this.product= productList
       console.log(this.product);
 
     })
   }
 
-  getAllProducts(){
-    this.prodcutService.getAllBooks().subscribe((list: ProductModelServer[])=> {
-      this.products = list;
-      console.log(list);
-    })
-  }
-
   handleAddToCart(){
-    this.msg.sendMsg(this.product);
+    // this.msg.sendMsg(this.product);
+    this.cartService.addItem(this.product) 
 
     this.toast.success(`${this.product.title} added to the cart.`, 'Item Added', {
       timeOut: 1500,
@@ -64,13 +59,14 @@ export class EssentailsComponent implements OnInit {
     this.ngOnInit();
   }
 
-  updateCart(){
-    this.orderService.changeSize(''+this.msg.getCartItems().length);
-    console.log(this.msg.getCartItems().length);
-  }
+  // updateCart(){
+  //   this.orderService.changeSize(''+this.msg.getCartItems().length);
+  //   console.log(this.msg.getCartItems().length);
+  // }
 
   reload(){
     this.ngOnInit();
   }
+
 
 }
