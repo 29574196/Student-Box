@@ -39,7 +39,7 @@ export class EssentailsComponent implements OnInit {
   }
 
   getProduct(){
-    this.prodcutService.getSingleBook('5faa5c75f965ba16b035509c').subscribe((productList: ProductModelServer)=> {
+    this.prodcutService.getSingleBook('5faa5dcaf965ba16b035509e').subscribe((productList: ProductModelServer)=> {
       this.product= productList
       console.log(this.product);
 
@@ -48,7 +48,7 @@ export class EssentailsComponent implements OnInit {
 
   handleAddToCart(){
     // this.msg.sendMsg(this.product);
-    this.cartService.addItem(this.product) 
+    this.cartService.addItem(this.product)
 
     this.toast.success(`${this.product.title} added to the cart.`, 'Item Added', {
       timeOut: 1500,

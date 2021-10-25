@@ -70,8 +70,14 @@ export class HeaderComponent implements OnInit {
     //   else
     //     this.cartItems = cartItems;
     // });
-    this.cartService.cartItems.subscribe(d=> {
-      this.itemInCart = d.length;
+    this.cartService.cartItems.subscribe(data=> {
+      this.itemInCart = data.length;
+      this.cartItems = data;
+
+      if(this.cartItems){
+        this.getTotal(this.cartItems);
+
+      }
     });
   }
 
@@ -132,12 +138,10 @@ export class HeaderComponent implements OnInit {
     this.ngOnInit();
   }
 
-  removeCartItem(i: any){
-    // this.cartItems.splice(i,1);
-    // this.order.changeItems(this.cartItems);
-    // this.msg.updateCartItems(this.cartItems);
-    // this.cartLength = this.cartItems.length;
-    // this.cartTotal = this.msg.getTotal();
+  removeCartItem(i: number){
+    this.cartItems.splice(i,1);
+    this.cartService.setCartData(this.cartItems);
+    this.getTotal(this.cartItems);
   }
 
   signOut() {
@@ -170,6 +174,16 @@ export class HeaderComponent implements OnInit {
       // this.router.navigate(['/home']);
       this.isLoggedIn = false;
     }
+  }
+
+  getTotal(data:any){
+    let subs = 0;
+
+    for(const item of data){
+      subs += item.price * item.quantity
+    }
+    this.cartTotal = subs;
+    console.log(this.cartTotal);
   }
 
 }
