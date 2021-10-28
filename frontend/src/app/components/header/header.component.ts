@@ -92,6 +92,8 @@ export class HeaderComponent implements OnInit {
         localStorage.setItem('id', res._id);
         // this.reset();
         console.log('Successful');
+        this.toast.success(`Login Successful, Welcome Back ${res.name}`, 'Login Success');
+
       },
       (err) => {
         console.log('Failed');
@@ -108,6 +110,7 @@ export class HeaderComponent implements OnInit {
         localStorage.setItem('email', res.email);
         localStorage.setItem('name', res.name);
         localStorage.setItem('phone', res.phone);
+        localStorage.setItem('id', res._id);
         // this.reset();
         console.log('Successful');
       },

@@ -10,6 +10,15 @@ export class ProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    this.reload()
+  }
+
+  reload(){
+    setTimeout(() => {
+      this.ngOnInit();
+  }, 1500);
+
   }
 
 }

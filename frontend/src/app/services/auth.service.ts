@@ -25,6 +25,7 @@ export class AuthService {
     localStorage.removeItem('name');
     localStorage.removeItem('email');
     localStorage.removeItem('phone');
+    localStorage.clear();
     this.router.navigate(['/home']);
   }
 

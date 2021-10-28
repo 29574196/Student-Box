@@ -1,266 +1,277 @@
-<section class="pt-3 pb-3 page-info section-padding border-bottom bg-white">
-  <div class="container">
-     <div class="row">
-        <div class="col-md-12">
-           <a href="#"><strong><span class="mdi mdi-home"></span> Home</strong></a> <span class="mdi mdi-chevron-right"></span> <a href="#">Checkout</a>
-        </div>
-     </div>
-  </div>
-</section>
-<section class="checkout-page section-padding">
-  <div class="container">
-     <div class="row">
+<body>
+  <section class="pt-3 pb-3 page-info section-padding border-bottom bg-white">
+    <div class="container">
 
-        <div class="col-md-8">
+    </div>
+  </section>
+  <section class="checkout-page section-padding">
+    <div class="container">
+       <div class="row">
 
-           <div class="checkout-step">
-              <div class="accordion" id="accordionExample">
-                 <div class="card checkout-step-one">
-                    <div class="card-header" id="headingOne">
-                       <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <span class="number">1</span> Phone Number Verification
-                          </button>
-                       </h5>
+          <div class="col-md-8">
+
+             <div class="checkout-step">
+                <div class="accordion" id="accordionExample">
+                   <div class="card checkout-step-one">
+                      <div class="card-header" id="headingOne">
+                         <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="number">1</span> Phone Number Verification
+                            </button>
+                         </h5>
+                      </div>
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                         <div class="card-body">
+                            <p>We need your phone number so that we can update you about your order.</p>
+                            <form>
+                               <div class="form-row align-items-center">
+                                  <div class="col-auto">
+                                     <label class="sr-only">phone number</label>
+                                     <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                           <div class="input-group-text"><span class="mdi mdi-cellphone-iphone"></span></div>
+                                        </div>
+                                        <input [(ngModel)]="data.cell_number" value="sbtu01@payfast.co.za" name="cell_number"  type="text" class="form-control" placeholder="Enter phone number">
+                                     </div>
+                                  </div>
+                                  <div class="col-auto">
+                                     <button type="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="btn btn-secondary mb-2 btn-lg">NEXT</button>
+                                  </div>
+                               </div>
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="card checkout-step-two">
+                      <div class="card-header" id="headingTwo">
+                         <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span class="number">2</span> Delivery Address
+                            </button>
+                         </h5>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                         <div class="card-body">
+                            <form>
+                               <div class="row">
+                                  <div class="col-sm-6">
+                                     <div class="form-group">
+                                        <label class="control-label">First Name <span class="required">*</span></label>
+                                        <input [(ngModel)]="data.name_first"  name="name_first" class="form-control border-form-control" value="" placeholder="Gurdeep" type="text">
+                                     </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                     <div class="form-group">
+                                        <label class="control-label">Last Name <span class="required">*</span></label>
+                                        <input [(ngModel)]="data.name_last" name="name_last" class="form-control border-form-control" value="" placeholder="Osahan" type="text">
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="row">
+
+                                  <div class="col-sm-6">
+                                     <div class="form-group">
+                                        <label class="control-label">Email Address <span class="required">*</span></label>
+                                        <input [(ngModel)]="data.email_address" name="email_address" class="form-control border-form-control " value="" placeholder="iamosahan@gmail.com"  type="email">
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="row">
+
+                                  <div class="col-sm-6">
+                                     <div class="form-group">
+                                        <label class="control-label">City <span class="required">*</span></label>
+                                        <select class="select2 form-control border-form-control">
+                                           <option disabled="">Potchefstroom</option>
+
+                                        </select>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="row">
+                               </div>
+                               <div class="row">
+                                  <div class="col-sm-12">
+                                     <div class="form-group">
+                                        <label class="control-label">Shipping Address <span class="required">*</span></label>
+                                        <textarea [(ngModel)]="orderData.address1" name="address1" class="form-control border-form-control"></textarea>
+                                        <small class="text-danger">Please provide the number and street.</small>
+                                     </div>
+                                  </div>
+                               </div>
+
+                               <div class="custom-control custom-checkbox mb-3">
+                                  <input type="checkbox" class="custom-control-input" id="customCheckbill">
+                                  <label class="custom-control-label" for="customCheckbill">Use my delivery address as my billing address</label>
+                               </div>
+                               <button type="button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-secondary mb-2 btn-lg" >NEXT</button>
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="card">
+                      <div class="card-header" id="headingThree">
+                         <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <span class="number">3</span> Payment
+                            </button>
+                         </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                         <div class="card-body">
+                            <!-- <form class="col-lg-8 col-md-8 mx-auto">
+                               <div class="form-group">
+                                  <label class="control-label">Card Number</label>
+                                  <input class="form-control border-form-control" value="" placeholder="0000 0000 0000 0000" type="text">
+                               </div>
+                               <div class="row">
+                                  <div class="col-sm-3">
+                                     <div class="form-group">
+                                        <label class="control-label">Month</label>
+                                        <input class="form-control border-form-control" value="" placeholder="01" type="text">
+                                     </div>
+                                  </div>
+                                  <div class="col-sm-3">
+                                     <div class="form-group">
+                                        <label class="control-label">Year</label>
+                                        <input class="form-control border-form-control" value="" placeholder="15" type="text">
+                                     </div>
+                                  </div>
+                                  <div class="col-sm-3">
+                                  </div>
+                                  <div class="col-sm-3">
+                                     <div class="form-group">
+                                        <label class="control-label">CVV</label>
+                                        <input class="form-control border-form-control" value="" placeholder="135" type="text">
+                                     </div>
+                                  </div>
+                               </div>
+
+                               <hr>
+                               <div class="custom-control custom-radio">
+                                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadio1">Would you like to pay by Cash on Delivery?</label>
+                               </div>
+                               <p>Vestibulum semper accumsan nisi, at blandit tortor maxi'mus in phasellus malesuada sodales odio, at dapibus libero malesuada quis.</p>
+                               <button type="submit"  data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour" class="btn btn-secondary mb-2 btn-lg">NEXT</button>
+                            </form> -->
+                            <div class="row">
+                              <div class="col-sm-12">
+                                 <div class="form-group">
+                                    <label class="control-label">Additional Notes:  <span class="required">*</span></label>
+                                    <textarea [(ngModel)]="orderData.notes" name="notes" class="form-control border-form-control" placeholder="E.g Please deliver around 15:00.."></textarea>
+                                    <small class="text-danger">Please provide any additional notes</small>
+                                 </div>
+                                 <form action="https://www.payfast.co.za/eng/process" method="post" #form>
+                                  <input
+                                            type="hidden"
+                                            name="merchant_id"
+                                            value="12276456"
+                                            />
+                                        <input
+                                            type="hidden"
+                                            name="merchant_key"
+                                            value="lpk4o6pztf5n8"
+                                            />
+                                  <input type="hidden" name="amount" value="{{data.cost}}">
+                                  <input type="hidden" name="item_name" value="{{data.item_name}}">
+                                  <input type="hidden" name="name_first" value="{{data.name_first}}">
+                                  <input type="hidden" name="name_last" value="{{data.name_last}}">
+                                  <input type="hidden" name="email_address" value={{data.email_address}}>
+                                  <input type="hidden" name="cell_number" value={{data.cell_number}}>
+
+                               </form>
+                              </div>
+                           </div>
+                            <button class="button button1" (click)="makeCashOrder()">Cash on Delivery</button>
+                            <button class="button button2" (click)="form.submit()">Payfast</button>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="card">
+                      <div class="card-header" id="headingThree">
+                         <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                            <span class="number">4</span> Order Complete
+                            </button>
+                         </h5>
+                      </div>
+                      <div id="collapsefour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                         <div class="card-body">
+                            <div class="text-center">
+                               <div class="col-lg-10 col-md-10 mx-auto order-done">
+                                  <i class="mdi mdi-check-circle-outline text-secondary"></i>
+                                  <h4 class="text-success">Congrats! Your Order has been Accepted..</h4>
+                                  <p>
+                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, Sed ex est, consectetur eget consectetur, Lorem ipsum dolor sit amet...
+                                  </p>
+                               </div>
+
+                               <div class="text-center">
+                                  <a><button type="submit" class="btn btn-secondary mb-2 btn-lg" >Return to store</button></a>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+          </div>
+
+          <div class="col-md-4">
+             <div class="card">
+                <h5 class="card-header">My Cart <span class="text-secondary float-right">{{cartItems.length}}</span></h5>
+                <div class="card-body pt-0 pr-0 pl-0 pb-0">
+                   <div class="cart-list-product" *ngFor="let item of cartItems; let i=index">
+                      <a (click)="removeCartItem(i)" class="float-right remove-cart" ><i class="mdi mdi-close"></i></a>
+                      <img class="img-fluid" src="assets/images/2.jpg" alt="">
+                      <span class="badge badge-success">In Stock</span>
+                      <h5><a href="#">{{item.title}}</a></h5>
+                      <h6><strong><span class="mdi mdi-approval"></span> Quantity: </strong> {{item.quantity}}</h6>
+                      <p class="offer-price mb-0">R{{item.price}} <i class="mdi mdi-tag-outline"></i></p>
+                   </div>
+                   <div class="cart-sidebar-footer">
+                    <div class="cart-store-details">
+                       <p>Sub Total <strong class="float-right">R{{cartTotal}}</strong></p>
+                       <p>Delivery Charges <strong class="float-right text-danger">+ R0.00</strong></p>
+                       <!-- <h6>Your total savings <strong class="float-right text-danger">$55 (42.31%)</strong></h6> -->
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                       <div class="card-body">
-                          <p>We need your phone number so that we can update you about your order.</p>
-                          <form>
-                             <div class="form-row align-items-center">
-                                <div class="col-auto">
-                                   <label class="sr-only">phone number</label>
-                                   <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                         <div class="input-group-text"><span class="mdi mdi-cellphone-iphone"></span></div>
-                                      </div>
-                                      <input [(ngModel)]="data.cell_number" value="sbtu01@payfast.co.za" name="cell_number"  type="text" class="form-control" placeholder="Enter phone number">
-                                   </div>
-                                </div>
-                                <div class="col-auto">
-                                   <button type="button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="btn btn-secondary mb-2 btn-lg">NEXT</button>
-                                </div>
-                             </div>
-                          </form>
-                       </div>
-                    </div>
+                    <a><button class="btn btn-secondary btn-lg btn-block text-left" type="button"><span class="float-left"><i class="mdi mdi-cart-outline"></i> Total: </span><span class="float-right"><strong>R{{cartTotal}}</strong> <span class="mdi mdi-chevron-right"></span></span></button></a>
                  </div>
-                 <div class="card checkout-step-two">
-                    <div class="card-header" id="headingTwo">
-                       <h5 class="mb-0">
-                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          <span class="number">2</span> Delivery Address
-                          </button>
-                       </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                       <div class="card-body">
-                          <form>
-                             <div class="row">
-                                <div class="col-sm-6">
-                                   <div class="form-group">
-                                      <label class="control-label">First Name <span class="required">*</span></label>
-                                      <input [(ngModel)]="data.name_first"  name="name_first" class="form-control border-form-control" value="" placeholder="Gurdeep" type="text">
-                                   </div>
-                                </div>
-                                <div class="col-sm-6">
-                                   <div class="form-group">
-                                      <label class="control-label">Last Name <span class="required">*</span></label>
-                                      <input [(ngModel)]="data.name_last" name="name_last" class="form-control border-form-control" value="" placeholder="Osahan" type="text">
-                                   </div>
-                                </div>
-                             </div>
-                             <div class="row">
+                </div>
 
-                                <div class="col-sm-6">
-                                   <div class="form-group">
-                                      <label class="control-label">Email Address <span class="required">*</span></label>
-                                      <input [(ngModel)]="data.email_address" name="email_address" class="form-control border-form-control " value="" placeholder="iamosahan@gmail.com"  type="email">
-                                   </div>
-                                </div>
-                             </div>
-                             <div class="row">
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
+  <section class="section-padding bg-white border-top">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-4 col-sm-6">
+             <div class="feature-box">
+                <i class="mdi mdi-truck-fast"></i>
+                <h6>Free & Next Day Delivery</h6>
+                <p>Lorem ipsum dolor sit amet, cons...</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+             <div class="feature-box">
+                <i class="mdi mdi-basket"></i>
+                <h6>100% Satisfaction Guarantee</h6>
+                <p>Rorem Ipsum Dolor sit amet, cons...</p>
+             </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+             <div class="feature-box">
+                <i class="mdi mdi-tag-heart"></i>
+                <h6>Great Daily Deals Discount</h6>
+                <p>Sorem Ipsum Dolor sit amet, Cons...</p>
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
 
-                                <div class="col-sm-6">
-                                   <div class="form-group">
-                                      <label class="control-label">City <span class="required">*</span></label>
-                                      <select class="select2 form-control border-form-control">
-                                         <option disabled="">Potchefstroom</option>
-
-                                      </select>
-                                   </div>
-                                </div>
-                             </div>
-                             <div class="row">
-                             </div>
-                             <div class="row">
-                                <div class="col-sm-12">
-                                   <div class="form-group">
-                                      <label class="control-label">Shipping Address <span class="required">*</span></label>
-                                      <textarea [(ngModel)]="orderData.address1" class="form-control border-form-control"></textarea>
-                                      <small class="text-danger">Please provide the number and street.</small>
-                                   </div>
-                                </div>
-                             </div>
-
-                             <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="customCheckbill">
-                                <label class="custom-control-label" for="customCheckbill">Use my delivery address as my billing address</label>
-                             </div>
-                             <button type="button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn btn-secondary mb-2 btn-lg" >NEXT</button>
-                          </form>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="card">
-                    <div class="card-header" id="headingThree">
-                       <h5 class="mb-0">
-                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          <span class="number">3</span> Payment
-                          </button>
-                       </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                       <div class="card-body">
-                          <form class="col-lg-8 col-md-8 mx-auto">
-                             <div class="form-group">
-                                <label class="control-label">Card Number</label>
-                                <input class="form-control border-form-control" value="" placeholder="0000 0000 0000 0000" type="text">
-                             </div>
-                             <div class="row">
-                                <div class="col-sm-3">
-                                   <div class="form-group">
-                                      <label class="control-label">Month</label>
-                                      <input class="form-control border-form-control" value="" placeholder="01" type="text">
-                                   </div>
-                                </div>
-                                <div class="col-sm-3">
-                                   <div class="form-group">
-                                      <label class="control-label">Year</label>
-                                      <input class="form-control border-form-control" value="" placeholder="15" type="text">
-                                   </div>
-                                </div>
-                                <div class="col-sm-3">
-                                </div>
-                                <div class="col-sm-3">
-                                   <div class="form-group">
-                                      <label class="control-label">CVV</label>
-                                      <input class="form-control border-form-control" value="" placeholder="135" type="text">
-                                   </div>
-                                </div>
-                             </div>
-
-                             <hr>
-                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadio1">Would you like to pay by Cash on Delivery?</label>
-                             </div>
-                             <p>Vestibulum semper accumsan nisi, at blandit tortor maxi'mus in phasellus malesuada sodales odio, at dapibus libero malesuada quis.</p>
-                             <button type="submit"  data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour" class="btn btn-secondary mb-2 btn-lg">NEXT</button>
-                          </form>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="card">
-                    <div class="card-header" id="headingThree">
-                       <h5 class="mb-0">
-                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                          <span class="number">4</span> Order Complete
-                          </button>
-                       </h5>
-                    </div>
-                    <div id="collapsefour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                       <div class="card-body">
-                          <div class="text-center">
-                             <div class="col-lg-10 col-md-10 mx-auto order-done">
-                                <i class="mdi mdi-check-circle-outline text-secondary"></i>
-                                <h4 class="text-success">Congrats! Your Order has been Accepted..</h4>
-                                <p>
-                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis. Etiam euismod ornare elementum. Sed ex est, Sed ex est, consectetur eget consectetur, Lorem ipsum dolor sit amet...
-                                </p>
-                             </div>
-                             <form action="https://www.payfast.co.za/eng/process" method="post" #form>
-                              <input
-                                        type="hidden"
-                                        name="merchant_id"
-                                        value="12276456"
-                                        />
-                                    <input
-                                        type="hidden"
-                                        name="merchant_key"
-                                        value="lpk4o6pztf5n8"
-                                        />
-                              <input type="hidden" name="amount" value="{{data.cost}}">
-                              <input type="hidden" name="item_name" value="{{data.item_name}}">
-                              <input type="hidden" name="name_first" value="{{data.name_first}}">
-                              <input type="hidden" name="name_last" value="{{data.name_last}}">
-                              <input type="hidden" name="email_address" value={{data.email_address}}>
-                              <input type="hidden" name="cell_number" value={{data.cell_number}}>
-
-                           </form>
-                             <div class="text-center">
-                                <a><button type="submit" class="btn btn-secondary mb-2 btn-lg" (click)="form.submit()">Return to store</button></a>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-
-        </div>
-
-        <div class="col-md-4">
-           <div class="card">
-              <h5 class="card-header">My Cart <span class="text-secondary float-right">{{cartLength}}</span></h5>
-              <div class="card-body pt-0 pr-0 pl-0 pb-0">
-                 <div class="cart-list-product" *ngFor="let item of cartItems; let i=index">
-                    <a (click)="removeCartItem(i)" class="float-right remove-cart" ><i class="mdi mdi-close"></i></a>
-                    <img class="img-fluid" src="assets/images/2.jpg" alt="">
-                    <span class="badge badge-success">In Stock</span>
-                    <h5><a href="#">{{item.title}}</a></h5>
-                    <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
-                    <p class="offer-price mb-0">R{{item.price}} <i class="mdi mdi-tag-outline"></i></p>
-                 </div>
-                 <div class="cart-sidebar-footer">
-                  <div class="cart-store-details">
-                     <p>Sub Total <strong class="float-right">R{{cartTotal}}</strong></p>
-                     <p>Delivery Charges <strong class="float-right text-danger">+ R0.00</strong></p>
-                     <!-- <h6>Your total savings <strong class="float-right text-danger">$55 (42.31%)</strong></h6> -->
-                  </div>
-                  <a><button class="btn btn-secondary btn-lg btn-block text-left" type="button"><span class="float-left"><i class="mdi mdi-cart-outline"></i> Total: </span><span class="float-right"><strong>R{{cartTotal}}</strong> <span class="mdi mdi-chevron-right"></span></span></button></a>
-               </div>
-              </div>
-
-           </div>
-        </div>
-     </div>
-  </div>
-</section>
-<section class="section-padding bg-white border-top">
-  <div class="container">
-     <div class="row">
-        <div class="col-lg-4 col-sm-6">
-           <div class="feature-box">
-              <i class="mdi mdi-truck-fast"></i>
-              <h6>Free & Next Day Delivery</h6>
-              <p>Lorem ipsum dolor sit amet, cons...</p>
-           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-           <div class="feature-box">
-              <i class="mdi mdi-basket"></i>
-              <h6>100% Satisfaction Guarantee</h6>
-              <p>Rorem Ipsum Dolor sit amet, cons...</p>
-           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-           <div class="feature-box">
-              <i class="mdi mdi-tag-heart"></i>
-              <h6>Great Daily Deals Discount</h6>
-              <p>Sorem Ipsum Dolor sit amet, Cons...</p>
-           </div>
-        </div>
-     </div>
-  </div>
-</section>
+</body>

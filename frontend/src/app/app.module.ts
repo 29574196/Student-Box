@@ -22,6 +22,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ErrorComponent } from './components/error/error.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CartTableComponent } from './components/cart/cart-table/cart-table.component';
+import { SuccessComponent } from './components/success/success.component';
+import { OrderFailedComponent } from './components/order-failed/order-failed.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CartTableComponent } from './components/cart/cart-table/cart-table.comp
     HeaderComponent,
     ErrorComponent,
     AboutUsComponent,
-    CartTableComponent
+    CartTableComponent,
+    SuccessComponent,
+    OrderFailedComponent
   ],
   imports: [
     BrowserModule,

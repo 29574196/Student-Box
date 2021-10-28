@@ -1,3 +1,5 @@
+import { OrderFailedComponent } from './components/order-failed/order-failed.component';
+import { SuccessComponent } from './components/success/success.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ErrorComponent } from './components/error/error.component';
@@ -45,6 +47,14 @@ const routes: Routes = [
   {
     path: 'essentials',
     component: EssentailsComponent
+  },
+  {
+    path: 'order-confirmation',
+    component: SuccessComponent
+  },
+  {
+    path: 'order-failed',
+    component: OrderFailedComponent
   },
   {
     path:'essentials-plus',

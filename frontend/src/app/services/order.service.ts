@@ -7,7 +7,7 @@ import { ProductModelServer } from '../models/Product';
   providedIn: 'root'
 })
 export class OrderService {
-  private orderUrl = 'http://localhost:3000/api/v1/orders/order/';
+  private orderUrl = 'http://localhost:3000/api/v1/orders/order-cash';
   private paymentUrl = 'http://localhost:3000/api/v1/orders/signature/';
   constructor(private http: HttpClient) { }
 
