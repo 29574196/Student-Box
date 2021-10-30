@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
-    component: CheckoutComponent
+    component: CheckoutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'premium',

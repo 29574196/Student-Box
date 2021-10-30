@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { MessangerService } from 'src/app/services/messanger.service';
 import { OrderService } from 'src/app/services/order.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-checkout',
@@ -14,15 +15,17 @@ import { Router } from '@angular/router';
 export class CheckoutComponent implements OnInit {
   cartItems: ProductModelServer[] = [];
   cartTotal = 0;
-  isLoggedIn = true;
+  
   showCheckout: boolean = false;
+  loader = true;
 
   constructor(
     // private msg: MessangerService,
     private order: OrderService,
     private authService: AuthService,
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService 
   ) {}
 
   cartLength!: any;
@@ -79,9 +82,16 @@ export class CheckoutComponent implements OnInit {
     //   else
     //     this.cartItems = cartItems;
     // });
+    this.spinner.show();
+    this.loader = true;
 
+    
     this.cartService.cartItems.subscribe((data) => {
+      // this.spinner.hide();
       this.cartItems = data;
+      setTimeout(()=> {
+        this.spinner.hide();
+      },2500);
 
       if (this.cartItems) {
         this.getTotal(this.cartItems);
@@ -90,16 +100,7 @@ export class CheckoutComponent implements OnInit {
     this.data.cost = this.cartTotal;
   }
 
-  loggedIn() {
-    if (this.authService.loggedIn()) {
-      console.log('true');
-      this.isLoggedIn;
-    } else {
-      // console.log('true');
-      // this.router.navigate(['/home']);
-      this.isLoggedIn = false;
-    }
-  }
+
 
   removeCartItem(i: number) {
     this.cartItems.splice(i, 1);
@@ -147,17 +148,20 @@ export class CheckoutComponent implements OnInit {
     this.orderData.user = localStorage.getItem('id') || '';
     this.orderData.totalPrice = this.cartTotal;
     this.orderData.payment_method = 'Cash On Delivery';
+    this.spinner.show();
     this.order.postOrder(this.orderData).subscribe(
       (res) => {
-        // localStorage.removeItem('cart');
-        console.log(res);
+
+        setTimeout(()=> {
+          this.spinner.hide();
+        },2500);
+
+        localStorage.removeItem('cart');
         let orderArray: any[] = [];
         orderArray.push(res);
         localStorage.setItem('order',JSON.stringify(orderArray));
 
-        // this.router.navigate(['/order-confirmation'])
-
-        console.log(this.data.item_name);
+        this.router.navigate(['/order-confirmation']);
       },
       (err) => {
         //dont allow payment
@@ -175,5 +179,15 @@ export class CheckoutComponent implements OnInit {
     }
     this.cartTotal = subs;
     console.log(this.cartTotal);
+  }
+
+  // tslint:disable-next-line: typedef
+  reset(){
+    this.spinner.show();
+    setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 2000);
+    this.ngOnInit();
   }
 }
