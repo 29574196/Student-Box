@@ -96,7 +96,7 @@ export class HeaderComponent implements OnInit {
 
       },
       (err) => {
-        console.log('Failed');
+        // console.log('Failed');
         this.toast.error('Login Failed, please try again', 'Login');
       }
     );
@@ -112,10 +112,10 @@ export class HeaderComponent implements OnInit {
         localStorage.setItem('phone', res.phone);
         localStorage.setItem('id', res._id);
         // this.reset();
-        console.log('Successful');
+        // console.log('Successful');
       },
       (err) => {
-        console.log('Failed');
+        // console.log('Failed');
         this.toast.error('Sign-Up Failed, please try again', 'Register');
       }
     );
@@ -170,7 +170,7 @@ export class HeaderComponent implements OnInit {
   // tslint:disable-next-line: typedef
   loggedIn() {
     if (this.authService.loggedIn()) {
-      console.log('true');
+      // console.log('true');
       this.isLoggedIn;
     } else {
       // console.log('true');
@@ -186,7 +186,7 @@ export class HeaderComponent implements OnInit {
       subs += item.price * item.quantity
     }
     this.cartTotal = subs;
-    console.log(this.cartTotal);
+    // console.log(this.cartTotal);
   }
 
 }

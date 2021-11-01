@@ -1,3 +1,6 @@
+import { QuantitiesComponent } from './components/quantities/quantities.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { OrderFailedComponent } from './components/order-failed/order-failed.component';
 import { SuccessComponent } from './components/success/success.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -18,6 +21,14 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   },
   {
     path: 'login',
@@ -57,6 +68,11 @@ const routes: Routes = [
     path: 'order-failed',
     component: OrderFailedComponent
   },
+  {
+    path: 'edit-quantities',
+    component: QuantitiesComponent
+  },
+
   {
     path:'essentials-plus',
     component: PremiumComponent
