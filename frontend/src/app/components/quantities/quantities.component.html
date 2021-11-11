@@ -1,0 +1,314 @@
+<section class="account-page section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 mx-auto">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <div class="card account-left">
+              <div class="user-profile-header">
+                <img alt="logo" src="assets/files/img/user.jpg" />
+                <h5 class="mb-1 text-secondary"><strong>Hi </strong> OSAHAN</h5>
+                <p>+91 8568079956</p>
+              </div>
+              <div class="list-group">
+                <a
+                  href="my-profile.html"
+                  class="list-group-item list-group-item-action active"
+                  ><i aria-hidden="true" class="mdi mdi-account-outline"></i> My
+                  Profile</a
+                >
+                <a
+                  href="my-address.html"
+                  class="list-group-item list-group-item-action"
+                  ><i aria-hidden="true" class="mdi mdi-map-marker-circle"></i>
+                  My Address</a
+                >
+                <a
+                  href="wishlist.html"
+                  class="list-group-item list-group-item-action"
+                  ><i aria-hidden="true" class="mdi mdi-heart-outline"></i> Wish
+                  List
+                </a>
+                <a
+                  href="orderlist.html"
+                  class="list-group-item list-group-item-action"
+                  ><i
+                    aria-hidden="true"
+                    class="mdi mdi-format-list-bulleted"
+                  ></i>
+                  Order List</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  ><i aria-hidden="true" class="mdi mdi-lock"></i> Logout</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card card-body account-right">
+              <div class="widget">
+                <div class="section-header">
+                  <h5 class="heading-design-h5">My Profile</h5>
+                </div>
+                <form>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Mushrooms <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          name="mushrooms"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.mushrooms"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Spinach <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.spinach"
+                          name="spinach"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Sweet Potatoes <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="123"
+                          [(ngModel)]="quantityData.sweet_potatoes"
+                          name="sweet"
+                          type="number"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Pepper <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          name="Pepper"
+                          [(ngModel)]="quantityData.peppers"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Carrots <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.carrots"
+                          name="carrots"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Onions <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.onions"
+                          name="onions"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Tomatoes <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.tomatoes"
+                          name="tomatoes"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Mangoes <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.mangoes"
+                          name="mangoes"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Potatoes <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.potatoes"
+                          name="potatoes"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Lettuce <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.lettuce"
+                          name="lettuce"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Cucumbers <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.cucumber"
+                          name="cucumbers"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Strawberries <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.strawberries"
+                          name="strawberries"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Apples <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.apples"
+                          name="apples"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Bananas <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.bananas"
+                          name="bananas"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Cabbage <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control border-form-control"
+                          value=""
+                          placeholder="23"
+                          [(ngModel)]="quantityData.cabbage"
+                          name="cabbage"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Address <span class="required">*</span></label
+                        >
+                        <textarea
+                          class="form-control border-form-control"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 text-right">
+                      <button type="button" class="btn btn-danger btn-lg">
+                        Cencel
+                      </button>
+                      <button type="button" class="btn btn-success btn-lg" (click)="editPost()">
+                        Save Changes
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

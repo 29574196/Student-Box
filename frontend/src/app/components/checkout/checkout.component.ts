@@ -15,7 +15,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class CheckoutComponent implements OnInit {
   cartItems: ProductModelServer[] = [];
   cartTotal = 0;
-  
+
   showCheckout: boolean = false;
   loader = true;
 
@@ -25,7 +25,7 @@ export class CheckoutComponent implements OnInit {
     private authService: AuthService,
     private cartService: CartService,
     private router: Router,
-    private spinner: NgxSpinnerService 
+    private spinner: NgxSpinnerService
   ) {}
 
   cartLength!: any;
@@ -34,17 +34,17 @@ export class CheckoutComponent implements OnInit {
   phone = localStorage.getItem('phone') || '';
 
   data = {
-    merchant_id: '12276456',
-    merchant_key: 'lpk4o6pztf5n8',
+    merchant_id: '16655987',
+    merchant_key: 'zod5nwwj2gqvz',
     name_first: '',
     name_last: '',
     email_address: '',
-    return_url: 'https://www.example.com/success',
-    cancel_url: 'https://www.example.com/cancel',
+    return_url: 'https://www.studentbox.co.za/order-confirmation',
+    cancel_url: 'https://www.studentbox.co.za/order-failed',
     notify_url: 'https://secondchancebooks.co.za/api/payfast-confirmation',
     cell_number: '',
     cost: 0,
-    item_name: ' ',
+    item_name: 'Student Box',
   };
 
   orderData = {
@@ -85,22 +85,29 @@ export class CheckoutComponent implements OnInit {
     this.spinner.show();
     this.loader = true;
 
-    
     this.cartService.cartItems.subscribe((data) => {
       // this.spinner.hide();
       this.cartItems = data;
-      setTimeout(()=> {
+      setTimeout(() => {
         this.spinner.hide();
-      },2500);
+      }, 2500);
 
       if (this.cartItems) {
         this.getTotal(this.cartItems);
       }
     });
     this.data.cost = this.cartTotal;
+
+    for (let item of this.cartItems) {
+      // this.orderData.items.push(item._id);
+
+      // result.push(item._id);
+      // console.log(result);
+      this.data.item_name = item.title;
+      // console.log(this.data.item_name);
+
+    }
   }
-
-
 
   removeCartItem(i: number) {
     this.cartItems.splice(i, 1);
@@ -110,7 +117,7 @@ export class CheckoutComponent implements OnInit {
 
   makeOrder() {
     // this.orderData.items = this.cartItems;
-    console.log(this.cartItems);
+    // console.log(this.cartItems);
     // const result = [];
     this.orderData.totalPrice = this.cartTotal;
     for (let item of this.cartItems) {
@@ -120,7 +127,7 @@ export class CheckoutComponent implements OnInit {
       // console.log(result);
       this.orderData.itemsTitle.push(item.title);
     }
-    console.log(this.orderData.items);
+    // console.log(this.orderData.items);
 
     this.orderData.totalPrice = this.cartTotal;
 
@@ -143,7 +150,7 @@ export class CheckoutComponent implements OnInit {
       // console.log(result);
       this.orderData.itemsTitle.push(item.title);
     }
-    console.log(this.orderData.items);
+    // console.log(this.orderData.items);
     this.orderData.items = this.cartItems;
     this.orderData.user = localStorage.getItem('id') || '';
     this.orderData.totalPrice = this.cartTotal;
@@ -151,15 +158,14 @@ export class CheckoutComponent implements OnInit {
     this.spinner.show();
     this.order.postOrder(this.orderData).subscribe(
       (res) => {
-
-        setTimeout(()=> {
+        setTimeout(() => {
           this.spinner.hide();
-        },2500);
+        }, 2500);
 
         localStorage.removeItem('cart');
         let orderArray: any[] = [];
         orderArray.push(res);
-        localStorage.setItem('order',JSON.stringify(orderArray));
+        localStorage.setItem('order', JSON.stringify(orderArray));
 
         this.router.navigate(['/order-confirmation']);
       },
@@ -178,16 +184,16 @@ export class CheckoutComponent implements OnInit {
       subs += item.price * item.quantity;
     }
     this.cartTotal = subs;
-    console.log(this.cartTotal);
+    // console.log(this.cartTotal);
   }
 
   // tslint:disable-next-line: typedef
-  reset(){
+  reset() {
     this.spinner.show();
     setTimeout(() => {
-        /** spinner ends after 5 seconds */
-        this.spinner.hide();
-      }, 2000);
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2000);
     this.ngOnInit();
   }
 }
