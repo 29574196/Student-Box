@@ -1,4 +1,6 @@
+import { OrderService } from 'src/app/services/order.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prims',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,private orderService: OrderService) { }
+
+  public product: any[] = [];
 
   ngOnInit(): void {
+    this.getQuantities();
+    console.log(this.product)
+  }
+
+  getQuantities(){
+    this.orderService.getQuantities().subscribe((data)=> {
+      // this.product = data;
+      console.log(data);
+      this.product.push(data)
+    })
   }
 
 }
