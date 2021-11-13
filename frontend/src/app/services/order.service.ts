@@ -7,10 +7,10 @@ import { ProductModelServer } from '../models/Product';
   providedIn: 'root'
 })
 export class OrderService {
-  private orderUrl = 'http://localhost:3000/api/v1/orders/order-cash';
-  private paymentUrl = 'http://localhost:3000/api/v1/orders/signature/';
-  private editUrl = 'http://localhost:3000/api/v1/orders/edit/quantities';
-  private quantityUrl = 'http://localhost:3000/api/v1/orders/quantities';
+  private orderUrl = 'https://thestudentbox.co.za/api/v1/orders/order-cash';
+  private paymentUrl = 'https://thestudentbox.co.za/api/v1/orders/signature/';
+  private editUrl = 'https://thestudentbox.co.za/api/v1/orders/edit/quantities';
+  private quantityUrl = 'https://thestudentbox.co.za/api/v1/orders/quantities';
   constructor(private http: HttpClient) { }
 
   private cartSize = new BehaviorSubject('0');
