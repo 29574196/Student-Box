@@ -191,7 +191,7 @@
 
   
   .main-img{
-    width: 300px;
+    width: 210px;
     position: absolute;
     top: 50%;
     left: 80%;
@@ -219,7 +219,7 @@
   }
 
   .content-box{
-    width: 290px;
+    width: 200px;
     position: absolute;
     top: 80px;
     left: 10px;
