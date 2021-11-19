@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       password: '',
     };
 
-    
+
 
   ngOnInit(): void {
   }
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem('phone', res.phone);
         localStorage.setItem('id', res._id);
         this.toast.success('Sign-Up Successful, Hello, '+ res.name, 'Register');
-        this.router.navigate(['/'])
+        this.router.navigate(['/cart'])
         // this.reset();
         // console.log('Successful');
       },

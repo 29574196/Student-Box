@@ -51,7 +51,7 @@ const routes: Routes = [
   {
     path: 'prims',
     component: PrimsComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
