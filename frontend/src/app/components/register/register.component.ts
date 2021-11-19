@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
       last_name: '',
       phone_number: '',
       email: '',
-      password: '',
+      password: '', 
     };
 
     
@@ -30,8 +30,12 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.spinner.show();
     this.authService.registerUser(this.registerData).subscribe(
       (res) => {
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 2500);
         localStorage.setItem('token', res.token);
         localStorage.setItem('email', res.email);
         localStorage.setItem('name', res.name);

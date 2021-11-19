@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   login() {
+    
     this.authService.loginUser(this.loginData).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('name', res.name);
         localStorage.setItem('phone', res.phone);
         localStorage.setItem('id', res._id);
-        // this.reset();
+        this.reset();
         console.log('Successful');
       },
       (err) => {
@@ -65,14 +66,26 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   register() {
+    this.spinner.show();
     this.authService.registerUser(this.registerData).subscribe(
       (res) => {
+        this.spinner.hide();
         localStorage.setItem('token', res.token);
         localStorage.setItem('email', res.email);
         localStorage.setItem('name', res.name);
         localStorage.setItem('phone', res.phone);
         // this.reset();
         console.log('Successful');
+        this.toast.success(
+          `${this.loginData.email} successfully logged in.`,
+          'Welcome back!',
+          {
+            timeOut: 1500,
+            progressBar: true,
+            progressAnimation: 'increasing',
+            positionClass: 'toast-top-right',
+          }
+        );
       },
       (err) => {
         console.log('Failed');
