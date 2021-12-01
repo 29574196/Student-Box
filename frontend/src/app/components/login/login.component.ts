@@ -111,7 +111,7 @@ export class LoginComponent implements OnInit {
       );
       this.spinner.hide();
     }, 2000);
-    this.ngOnInit();
+    this.router.navigate(['/cart'])
   }
 
   signOut() {

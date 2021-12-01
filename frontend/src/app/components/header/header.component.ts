@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   // ... your class variables here
 
   // ... your class variables here
-  userName!: string;
+  userName = '';
 
   loginData: any = {
     email: '',
@@ -79,6 +79,8 @@ export class HeaderComponent implements OnInit {
 
       }
     });
+    this.loggedIn();
+
   }
 
   // tslint:disable-next-line: typedef
@@ -172,6 +174,10 @@ export class HeaderComponent implements OnInit {
     if (this.authService.loggedIn()) {
       // console.log('true');
       this.isLoggedIn;
+      const name = localStorage.getItem('name');
+      
+      console.log(name);
+
     } else {
       // console.log('true');
       // this.router.navigate(['/home']);
