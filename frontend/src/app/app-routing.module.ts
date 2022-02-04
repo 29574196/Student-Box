@@ -17,6 +17,8 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
+import { GridComponent } from './components/grid/grid.component';
+import { AddOnsComponent } from './components/add-ons/add-ons.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,10 @@ const routes: Routes = [
   {
     path: 'premium',
     component: SingleProductComponent
+  },
+  {
+    path: 'grid',
+    component: GridComponent
   },
   {
     path: 'cart',
@@ -77,7 +83,10 @@ const routes: Routes = [
     path: 'edit-quantities',
     component: QuantitiesComponent
   },
-
+  {
+    path: 'add-ons',
+    component: AddOnsComponent
+  },
   {
     path:'essentials-plus',
     component: PremiumComponent

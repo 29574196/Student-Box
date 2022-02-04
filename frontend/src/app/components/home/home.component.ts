@@ -9,8 +9,12 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
+  mobile: boolean = false;
 
   ngOnInit(): void {
+    if (window.screen.width === 360) { // 768px portrait
+      this.mobile = true;
+    }
   }
 
   logoPic(){

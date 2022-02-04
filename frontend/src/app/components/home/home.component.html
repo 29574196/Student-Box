@@ -1,58 +1,113 @@
 
- <div class="main">
-  <div class="left-col">
-      <!-- <img src="assets/images/1.png" class="logo" (click)="logoPic()" style="cursor: pointer;"> -->
-      <div class="content-box">
-          <!-- <img src="assets/images/rating.png" class="rating"> -->
-          <h1>The Student Box</h1>
-          <p ><b>Your essentials for & to you</b></p>
-          <a href="premium" >Order Now<img src="assets/images/arrow.png" ></a>
-      </div>
-      <!-- <img src="assets/images/left-arrow.png" class="left-arrow"> -->
-  </div>
 
-  <div class="right-col">
-      <div class="navbar">
-          <!-- <div class="search-box">
-              <input type="text" placeholder="Find recipes, videos and more">
-              <img src="assets/images/search.png">
-          </div> -->
-          <ul>
-              <li><a href="prims"><img src="assets/images/fill-tag.png">Prims</a></li>
-              <li><a href="register">Sign Up</a></li>
-          </ul>
-      </div>
-      <div class="more-items" style="display: none;">
-          <img src="assets/images/fruit1.png">
-          <img src="assets/images/fruit2.png">
-          <img src="assets/images/fruit3.png">
-      </div>
-      <!-- <img src="assets/images/right-arrow.png" class="right-arrow"> -->
-  </div>
+<ng-container *ngIf="!mobile">
+    <section class="home">
 
-
-
-  <img src="assets/images/fruits.png" class="main-img">
-
-
-</div>
-
-<div class="side-bar">
-  <img src="assets/images/menu.png" class="menu">
-
-  <div class="social-links">
-      <img src="assets/images/fb.png">
-      <img src="assets/images/ig.png">
-      <img src="assets/images/tw.png">
-  </div>
-
-  <div class="useful-links">
-      <img src="assets/images/share.png">
-      <img src="assets/images/info.png">
-
-  </div>
-
-</div>
+        <div class="slides-container">
+     
+            <div class="slide active">
+                <div class="content">
+                    <span>Farm-fresh fruit & veg</span>
+                    <h3></h3>
+                    <a href="essentials" class="btn">shop now</a>
+                </div>
+                <div class="image">
+                    <img src="assets/images/home-img-1_ccexpress.png" width="300" height="300" alt="">
+                </div>
+            </div>
+     
+        </div>
+     
+        
+     
+     </section>
+     
+     <section class="banner-container">
+     
+        <div class="banner">
+            <img src="assets/images/banner-1.jpg" alt="">
+            <div class="content">
+                <span>Premium Box</span>
+                <h3>R229.99</h3>
+                <a href="premium" class="btn">shop now</a>
+            </div>
+        </div>
+     
+        <div class="banner">
+            <img src="assets/images/banner-2.jpg" alt="">
+            <div class="content">
+                <span>Essentials PLUS</span>
+                <h3>R179.99</h3>
+                <a href="essentials-plus" class="btn">shop now</a>
+            </div>
+        </div>
+     
+        <div class="banner">
+            <img src="assets/images/banner-3.jpg" alt="">
+            <div class="content">
+                <span>Essentials</span>
+                <h3>R149.99</h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+     
+     </section>
+     
+     <section class="info-container">
+     
+        <div class="info">
+            <img src="assets/images/icon-1.png" alt="">
+            <div class="content">
+                <h3>Weekly Deliveries</h3>
+                <span>Every Wednesday</span>
+            </div>
+        </div>
+     
+        <div class="info">
+            <img src="assets/images/icon-2.png" alt="">
+            <div class="content">
+                <h3>24 / 7 available</h3>
+                <span>call us anytime</span>
+            </div>
+        </div>
+     
+        <div class="info">
+            <img src="assets/images/icon-3.png" alt="">
+            <div class="content">
+                <h3>easy payments</h3>
+                <span>cash or credits</span>
+            </div>
+        </div>
+     
+     </section>
+     
+     <section class="review">
+     
+        <div class="box">
+            <div class="user">
+                <img src="assets/images/pic-1.png" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>happy client</span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem molestiae expedita culpa officiis harum impedit vel! Odit saepe similique vero!</p>
+        </div>
+     
+        <div class="box">
+            <div class="user">
+                <img src="assets/images/pic-2.png" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>happy client</span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem molestiae expedita culpa officiis harum impedit vel! Odit saepe similique vero!</p>
+        </div>
+     
+     </section>
+</ng-container>
+ 
 
 
 

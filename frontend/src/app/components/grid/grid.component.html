@@ -1,0 +1,73 @@
+<!-- <div cdkDropListGroup>
+    <div class="example-container">
+        <h2>Swap In</h2>
+
+        <div cdkDropList
+            [cdkDropListData]="todo"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+        >
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+
+    <div class="example-container">
+        <h2>Swap Out</h2>
+
+        <div cdkDropList
+            [cdkDropListData]="done"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+
+        >
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+
+</div> -->
+
+<div class="container">
+    <h1>{{title}}</h1>
+    <p>Drag and drop by swapping items.</p>
+  
+    <div class="list-container">
+  
+      <div class="todo-container column-container">
+        <div class="list"
+             cdkDropList
+             #todoList="cdkDropList"
+             [cdkDropListData]="todos"
+             [cdkDropListConnectedTo]="[doneList]"
+             (cdkDropListDropped)="drop($event)">
+          <h2>Swappable Items: In</h2>
+          <mat-card *ngFor="let todo of todos" cdkDrag>
+            <mat-card-header cdkDragPreview>
+              <mat-card-title>{{todo.name}}</mat-card-title>
+              <mat-card-subtitle>{{todo.category}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </div>
+  
+      <div class="done-container column-container">
+        <div class="list"
+             cdkDropList
+             #doneList="cdkDropList"
+             [cdkDropListData]="completed"
+             [cdkDropListConnectedTo]="todoList"
+             (cdkDropListDropped)="drop($event)">
+          <h2>Swappable Items: Out</h2>
+          <mat-card *ngFor="let complete of completed" cdkDrag>
+            <mat-card-header>
+              <mat-card-title>{{complete.name}}</mat-card-title>
+              <mat-card-subtitle>{{complete.category}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </div>
+
+      
+  
+    </div>
+    <a href=""><button type="button" class="btn btn-secondary btn-lg" style="font-size: 20px;" (click)="addToCart()"><i class="mdi mdi-cart-outline"></i> Continue</button> </a>
+  </div>

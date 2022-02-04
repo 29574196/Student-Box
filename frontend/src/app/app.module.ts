@@ -5,6 +5,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +28,8 @@ import { SuccessComponent } from './components/success/success.component';
 import { OrderFailedComponent } from './components/order-failed/order-failed.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { QuantitiesComponent } from './components/quantities/quantities.component';
+import { GridComponent } from './components/grid/grid.component';
+import { AddOnsComponent } from './components/add-ons/add-ons.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,9 @@ import { QuantitiesComponent } from './components/quantities/quantities.componen
     SuccessComponent,
     OrderFailedComponent,
     ContactComponent,
-    QuantitiesComponent
+    QuantitiesComponent,
+    GridComponent,
+    AddOnsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,8 @@ import { QuantitiesComponent } from './components/quantities/quantities.componen
     NoopAnimationsModule,
     NgxSpinnerModule,
     FormsModule,
+    DragDropModule,
+    MatCardModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
   ],

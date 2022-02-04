@@ -1,211 +1,185 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+
 
 body {
-    background: #F5F1EE;
-    font-family: 'Roboto', sans-serif
+background: #DFC2F2;
+	background-image: linear-gradient( to right, #ffffb3,#ffe6e6);
+	background-attachment: fixed;	
+	background-size: cover;
+  
+	}
+
+#container{
+	box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 350px;
+	width: 700px;
+  
+	
 }
 
-.card {
-    width: 250px;
-    border-radius: 10px
+
+
+.product-details {
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
+	height: 100%;
+	float: left;
+	width: 40%;
+
 }
 
-.card-img-top {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px
+#container .product-details h1{
+	font-family: 'Bebas Neue', cursive;
+	display: inline-block;
+	position: relative;
+	font-size: 30px;
+	color: #344055;
+	margin: 0;
+	
 }
 
-span.text-muted {
-    font-size: 12px
+#container .product-details h1:before{
+	position: absolute;
+	content: '';
+	right: 0%; 
+	top: 0%;
+	transform: translate(25px, -15px);
+	font-family: 'Bree Serif', serif;
+	display: inline-block;
+	background: #ffe6e6;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 5px;
+	color: white;
+	margin: 0;
+	animation: chan-sh 6s ease infinite;
+
 }
 
-small.text-muted {
-    font-size: 8px
+
+
+	
+
+
+.hint-star {
+	display: inline-block;
+	margin-left: 0.5em;
+	color: gold;
+	width: 50%;
 }
 
-h5.mb-0 {
-    font-size: 1rem
+
+#container .product-details > p {
+font-family: 'EB Garamond', serif;
+	text-align: center;
+	font-size: 18px;
+	color: #7d7d7d;
+	
+}
+.control{
+	position: absolute;
+	bottom: 20%;
+	left: 22.8%;
+	
+}
+.btn {
+
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background:  #809fff;
+	border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	color: #eee;
+	padding: 0;
+	margin: 0;
+	
 }
 
-small.ghj {
-    font-size: 9px
+.btn:hover{transform: translateY(-6px);
+	background: #1a66ff;}
+
+.btn span {
+	font-family: 'Farsan', cursive;
+	transition: transform 0.3s;
+	display: inline-block;
+  padding: 10px 20px;
+	font-size: 1.2em;
+	margin:0;
+	
+}
+.btn .price, .shopping-cart{
+	background: #333;
+	border: 0;
+	margin: 0;
 }
 
-.mid {
-    background: #ECEDF1
+.btn .price {
+	transform: translateX(-10%); padding-right: 15px;
 }
 
-h6.ml-1 {
-    font-size: 13px
+.btn .shopping-cart {
+	transform: translateX(-100%);
+  position: absolute;
+	background: #333;
+	z-index: 1;
+  left: 0;
+  top: 0;
 }
 
-small.key {
-    text-decoration: underline;
-    font-size: 9px;
-    cursor: pointer
+.btn .buy {z-index: 3; font-weight: bolder;}
+
+.btn:hover .price {transform: translateX(-110%);}
+
+.btn:hover .shopping-cart {transform: translateX(0%);}
+
+
+
+.product-image {
+	transition: all 0.3s ease-out;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	float: right;
+	width: 45%;
+	display: inline-block;
 }
 
-.btn-danger {
-    color: #FFCBD2
-}
+#container img {width: 100%;height: 100%;}
 
-.btn-danger:focus {
-    box-shadow: none
-}
-
-small.justify-content-center {
-    font-size: 9px;
-    cursor: pointer;
-    text-decoration: underline
-}
-
-@media screen and (max-width:600px) {
-    .col-sm-4 {
-        margin-bottom: 50px
-    }
-} */
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Work+Sans:wght@800&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box
-}
-
-body {
-    padding: 15px;
-    background-color: #ddc3c3
-}
-
-.container {
-    margin: 20px auto;
-    max-width: 1000px;
-    background-color: white;
-    padding: 0
-}
-
-.form-control {
-    height: 25px;
-    width: 150px;
-    border: none;
-    border-radius: 0;
-    font-weight: 800;
-    padding: 0 0 5px 0;
-    background-color: transparent;
-    box-shadow: none;
-    outline: none;
-    border-bottom: 2px solid #ccc;
-    margin: 0;
-    font-size: 14px
-}
-
-.form-control:focus {
-    box-shadow: none;
-    border-bottom: 2px solid #ccc;
-    background-color: transparent
-}
-
-.form-control2 {
-    font-size: 14px;
-    height: 20px;
-    width: 55px;
-    border: none;
-    border-radius: 0;
-    font-weight: 800;
-    padding: 0 0 5px 0;
-    background-color: transparent;
-    box-shadow: none;
-    outline: none;
-    border-bottom: 2px solid #ccc;
-    margin: 0
-}
-
-.form-control2:focus {
-    box-shadow: none;
-    border-bottom: 2px solid #ccc;
-    background-color: transparent
-}
-
-.form-control3 {
-    font-size: 14px;
-    height: 20px;
-    width: 30px;
-    border: none;
-    border-radius: 0;
-    font-weight: 800;
-    padding: 0 0 5px 0;
-    background-color: transparent;
-    box-shadow: none;
-    outline: none;
-    border-bottom: 2px solid #ccc;
-    margin: 0
-}
-
-.form-control3:focus {
-    box-shadow: none;
-    border-bottom: 2px solid #ccc;
-    background-color: transparent
-}
-
-p {
-    margin: 0
-}
-
-img {
-    width: 100%;
+.info {
+    background: rgba(27, 26, 26, 0.9);
+    font-family: 'Bree Serif', serif;
+    transition: all 0.3s ease-out;
+    transform: translateX(-100%);
+    position: absolute;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 105%;
+    cursor: no-drop;
+    color: #FFF;
     height: 100%;
-    object-fit: fill
-}
-
-.text-muted {
-    font-size: 10px
-}
-
-.textmuted {
-    color: #6c757d;
-    font-size: 13px
-}
-
-.fs-14 {
-    font-size: 14px
-}
-
-.btn.btn-primary {
     width: 100%;
-    height: 55px;
-    border-radius: 0;
-    padding: 13px 0;
-    background-color: black;
-    border: none;
-    font-weight: 600
+    left: 0;
+    top: 0;
 }
 
-.btn.btn-primary:hover .fas {
-    transform: translateX(10px);
-    transition: transform 0.5s ease
-}
+.info h2 {text-align: center}
+.product-image:hover .info{transform: translateX(0);}
 
-.fw-900 {
-    font-weight: 900
-}
+.info ul li{transition: 0.3s ease;}
+.info ul li:hover{transform: translateX(50px) scale(1.3);}
 
-::placeholder {
-    font-size: 12px
-}
-
-.ps-30 {
-    padding-left: 30px
-}
-
-.h4 {
-    font-family: 'Work Sans', sans-serif !important;
-    font-weight: 800 !important
-}
-
-.textmuted,
-h5,
-.text-muted {
-    font-family: 'Poppins', sans-serif
-}
+.product-image:hover img {transition: all 0.3s ease-out;}
+.product-image:hover img {transform: scale(1.2, 1.2);}
