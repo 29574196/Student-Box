@@ -535,7 +535,12 @@ section {
   #menu-btn {
     display: inline-block;
   }
-  
+  .banner-container .banner img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 @media (max-width: 450px) {
@@ -547,6 +552,12 @@ section {
   }
   .contact .row form .inputBox input {
     width: 100%;
+  }
+  .banner-container .banner img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 

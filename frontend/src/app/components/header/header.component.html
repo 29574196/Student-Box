@@ -31,9 +31,8 @@
                                   <button type="submit" class="btn btn-lg btn-secondary btn-block" (click)="login()">Sign In</button>
                                </fieldset>
                                <div class="login-with-sites text-center">
-                                  <p>or Login with your social profile:</p>
-                                  <button class="btn-facebook login-icons btn-lg"><i class="mdi mdi-facebook"></i> Facebook</button>
-                                  <button class="btn-google login-icons btn-lg"><i class="mdi mdi-google"></i> Google</button>
+                                  <p>Don't have account? <a data-toggle="tab" href="#register" role="tab">Sign UP</a></p>
+                                  
                                </div>
                                <div class="custom-control custom-checkbox">
                                   <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -66,26 +65,20 @@
                                   <label>Enter Confirm Password </label>
                                   <input type="password" class="form-control" placeholder="********" required>
                                </fieldset> -->
+                               <div class="custom-control custom-checkbox">
+                                 <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                 <label class="custom-control-label" for="customCheck2">I Agree with <a >Term and Conditions</a></label>
+                              </div>
                                <fieldset class="form-group">
                                   <button type="submit" class="btn btn-lg btn-secondary btn-block" (click)="register()">Sign Up</button>
                                </fieldset>
-                               <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                  <label class="custom-control-label" for="customCheck2">I Agree with <a >Term and Conditions</a></label>
-                               </div>
+                               <p>Already have an account? <a data-toggle="tab" href="#login" role="tab">Login</a></p>
+                              
                             </div>
+                           
                          </div>
                          <div class="clearfix"></div>
-                         <div class="text-center login-footer-tab">
-                            <ul class="nav nav-tabs" role="tablist">
-                               <li class="nav-item">
-                                  <a class="nav-link active" data-toggle="tab" href="#login" role="tab"><i class="mdi mdi-lock"></i> LOGIN</a>
-                               </li>
-                               <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#register" role="tab"><i class="mdi mdi-pencil"></i> REGISTER</a>
-                               </li>
-                            </ul>
-                         </div>
+                        
                          <div class="clearfix"></div>
                       </div>
                    </form>
@@ -229,7 +222,7 @@
         <img class="img-fluid" src="assets/images/2.jpg" alt="">
 
         <h5><a href="single">{{item.title}}</a></h5>
-        <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+        
         <p class="offer-price mb-0">R{{item.price}} <i class="mdi mdi-tag-outline"></i> </p>
      </div>
 
