@@ -67,11 +67,7 @@
                               <fieldset class="form-group">
                                  <button type="submit" class="btn btn-lg btn-secondary btn-block" (click)="login()">Sign In</button>
                               </fieldset>
-                              <div class="login-with-sites text-center">
-                                 <p>or Login with your social profile:</p>
-                                 <button class="btn-facebook login-icons btn-lg"><i class="mdi mdi-facebook"></i> Facebook</button>
-                                 <button class="btn-google login-icons btn-lg"><i class="mdi mdi-google"></i> Google</button>
-                              </div>
+                              
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" class="custom-control-input" id="customCheck1">
                                  <label class="custom-control-label" for="customCheck1">Remember me</label>
@@ -115,11 +111,9 @@
                         <div class="clearfix"></div>
                         <div class="text-center login-footer-tab">
                            <ul class="nav nav-tabs" role="tablist">
+                              
                               <li class="nav-item">
-                                 <a class="nav-link active" data-toggle="tab" href="#login" role="tab"><i class="mdi mdi-lock"></i> LOGIN</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link"  [routerLink]="['/register']" role="tab"><i class="mdi mdi-pencil"></i> REGISTER</a>
+                                 <a class="nav-link"  [routerLink]="['/register']" role="tab"><i class="mdi mdi-pencil"></i> Go to REGISTER page</a>
                               </li>
                            </ul>
                         </div>
