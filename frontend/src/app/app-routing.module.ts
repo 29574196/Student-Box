@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
 import { GridComponent } from './components/grid/grid.component';
 import { AddOnsComponent } from './components/add-ons/add-ons.component';
+import { OrderItemComponent } from './components/order-item/order-item.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path: 'edit-quantities',
     component: QuantitiesComponent
+  },
+  {
+    path: 'order-item',
+    component: OrderItemComponent
   },
   {
     path: 'orderlist',

@@ -6,16 +6,14 @@
               <div class="col-md-4">
                  <div class="card account-left">
                     <div class="user-profile-header">
-                       <img alt="logo" src="img/user.jpg">
-                       <h5 class="mb-1 text-secondary"><strong>Hi </strong> OSAHAN</h5>
-                       <p> +91 8568079956</p>
+                       <img alt="logo" src="../../../assets/files/img/user.jpg">
+                       <h5 class="mb-1 text-secondary"><strong>Hi </strong> Dillan</h5>
+                       
                     </div>
                     <div class="list-group">
-                       <a href="my-profile.html" class="list-group-item list-group-item-action"><i aria-hidden="true" class="mdi mdi-account-outline"></i>  My Profile</a>
-                       <a href="my-address.html" class="list-group-item list-group-item-action"><i aria-hidden="true" class="mdi mdi-map-marker-circle"></i>  My Address</a>
-                       <a href="wishlist.html" class="list-group-item list-group-item-action"><i aria-hidden="true" class="mdi mdi-heart-outline"></i>  Wish List </a>
+                       
                        <a href="orderlist.html" class="list-group-item list-group-item-action active"><i aria-hidden="true" class="mdi mdi-format-list-bulleted"></i>  Order List</a>
-                       <a href="#" class="list-group-item list-group-item-action"><i aria-hidden="true" class="mdi mdi-lock"></i>  Logout</a>
+                       
                     </div>
                  </div>
               </div>
@@ -31,98 +29,22 @@
                           <table class="datatabel table table-striped table-bordered order-list-tabel" width="100%" cellspacing="0">
                              <thead>
                                 <tr>
-                                   <th>Order #</th>
                                    <th>Date Purchased</th>
-                                   <th>Status</th>
                                    <th>Total</th>
-                                   <th>Action</th>
+                                   <th>Address</th>
+                                   <th>View</th>
                                 </tr>
                              </thead>
                              <tbody>
-                                <tr>
-                                   <td>#243</td>
-                                   <td>August 08, 2017</td>
-                                   <td><span class="badge badge-danger">Canceled</span></td>
-                                   <td>$760.50</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
+                                <tr *ngFor="let item of order">
+                                  
+                                   <td>{{convertDate(item.dateOfOrder)}}</td>
+                                
+                                   <td>R{{item.totalPrice}}</td>
+                                   <td>{{item.address1}}</td>
+                                   <td><button (click)="saveID(item._id)"><a data-toggle="tooltip" data-placement="top" title=""  data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></button></td>
                                 </tr>
-                                <tr>
-                                   <td>#258</td>
-                                   <td>July 21, 2017</td>
-                                   <td><span class="badge badge-info">In Progress</span></td>
-                                   <td>$315.20</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#254</td>
-                                   <td>June 15, 2017</td>
-                                   <td><span class="badge badge-warning">Delayed</span></td>
-                                   <td>$1,264.00</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#293</td>
-                                   <td>May 19, 2017</td>
-                                   <td><span class="badge badge-success">Delivered</span></td>
-                                   <td>$198.35</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#266</td>
-                                   <td>April 04, 2017</td>
-                                   <td><span class="badge badge-success">Delivered</span></td>
-                                   <td>$598.35</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#277</td>
-                                   <td>March 30, 2017</td>
-                                   <td><span class="badge badge-success">Delivered</span></td>
-                                   <td>$98.35</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#243</td>
-                                   <td>August 08, 2017</td>
-                                   <td><span class="badge badge-danger">Canceled</span></td>
-                                   <td>$760.50</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#258</td>
-                                   <td>July 21, 2017</td>
-                                   <td><span class="badge badge-info">In Progress</span></td>
-                                   <td>$315.20</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#254</td>
-                                   <td>June 15, 2017</td>
-                                   <td><span class="badge badge-warning">Delayed</span></td>
-                                   <td>$1,264.00</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#293</td>
-                                   <td>May 19, 2017</td>
-                                   <td><span class="badge badge-success">Delivered</span></td>
-                                   <td>$198.35</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#266</td>
-                                   <td>April 04, 2017</td>
-                                   <td><span class="badge badge-success">Delivered</span></td>
-                                   <td>$598.35</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                   <td>#277</td>
-                                   <td>March 30, 2017</td>
-                                   <td><span class="badge badge-success">Delivered</span></td>
-                                   <td>$98.35</td>
-                                   <td><a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="View Detail" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a></td>
-                                </tr>
+                               
                              </tbody>
                           </table>
                        </div>

@@ -15,7 +15,7 @@ export class SuccessComponent implements OnInit {
   ngOnInit(): void {
     
     this.orderList = this.getCartData();
-    console.log(this.orderList);
+    
   }
 
   getCartData(){

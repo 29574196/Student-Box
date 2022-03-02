@@ -31,6 +31,7 @@ import { QuantitiesComponent } from './components/quantities/quantities.componen
 import { GridComponent } from './components/grid/grid.component';
 import { AddOnsComponent } from './components/add-ons/add-ons.component';
 import { OrderlistComponent } from './components/orderlist/orderlist.component';
+import { OrderItemComponent } from './components/order-item/order-item.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { OrderlistComponent } from './components/orderlist/orderlist.component';
     QuantitiesComponent,
     GridComponent,
     AddOnsComponent,
-    OrderlistComponent
+    OrderlistComponent,
+    OrderItemComponent
   ],
   imports: [
     BrowserModule,

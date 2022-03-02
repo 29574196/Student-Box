@@ -7,8 +7,9 @@ import { ProductModelServer } from '../models/Product';
   providedIn: 'root'
 })
 export class OrderService {
-  private orderUrl = 'https://thestudentbox.co.za/api/v1/orders/order-cash';
-  private paymentUrl = 'https://thestudentbox.co.za/api/v1/orders/signature/';
+  private orderUrl = 'https://thestudentbox.co.za/api/v1/orders/orders';
+  private ordersUrl = 'https://thestudentbox.co.za/api/v1/orders/orders';
+  
   private editUrl = 'https://thestudentbox.co.za/api/v1/orders/edit/quantities';
   private quantityUrl = 'https://thestudentbox.co.za/api/v1/orders/quantities';
   constructor(private http: HttpClient) { }
@@ -47,8 +48,13 @@ export class OrderService {
     return this.http.get<any[]>(this.quantityUrl);
   }
 
-  // tslint:disable-next-line: typedef
-  paymentSignature(details: any){
-    return this.http.post<any>(this.paymentUrl, details);
+  getOrders(){
+    return this.http.get<any[]>(this.ordersUrl);
   }
+
+  getSingleOrder(id: String){
+    console.log(id);
+    return this.http.get<any>(this.orderUrl + '/' + id)
+  }
+
 }
