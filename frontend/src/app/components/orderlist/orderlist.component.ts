@@ -33,7 +33,7 @@ export class OrderlistComponent implements OnInit {
   saveID(id: String){
     this.orderID = id;
     localStorage.setItem('orderID',this.orderID);
-    console.log(this.orderID);
+    this.router.navigate(['/order-item']);
   }
 
 }
