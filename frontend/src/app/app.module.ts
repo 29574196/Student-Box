@@ -30,6 +30,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { QuantitiesComponent } from './components/quantities/quantities.component';
 import { GridComponent } from './components/grid/grid.component';
 import { AddOnsComponent } from './components/add-ons/add-ons.component';
+import { OrderlistComponent } from './components/orderlist/orderlist.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AddOnsComponent } from './components/add-ons/add-ons.component';
     ContactComponent,
     QuantitiesComponent,
     GridComponent,
-    AddOnsComponent
+    AddOnsComponent,
+    OrderlistComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { OrderlistComponent } from './components/orderlist/orderlist.component';
 import { QuantitiesComponent } from './components/quantities/quantities.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
@@ -83,6 +84,11 @@ const routes: Routes = [
     path: 'edit-quantities',
     component: QuantitiesComponent
   },
+  {
+    path: 'orderlist',
+    component: OrderlistComponent
+  },
+
   {
     path: 'add-ons',
     component: AddOnsComponent
