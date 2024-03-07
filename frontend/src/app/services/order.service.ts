@@ -7,11 +7,11 @@ import { ProductModelServer } from '../models/Product';
   providedIn: 'root'
 })
 export class OrderService {
-  private orderUrl = 'https://thestudentbox.co.za/api/v1/orders/orders';
-  private ordersUrl = 'https://thestudentbox.co.za/api/v1/orders/orders';
+  private orderUrl = 'https://student-box-api.site/api/v1/orders/orders';
+  private ordersUrl = 'https://student-box-api.site/api/v1/orders/orders';
   
-  private editUrl = 'https://thestudentbox.co.za/api/v1/orders/edit/quantities';
-  private quantityUrl = 'https://thestudentbox.co.za/api/v1/orders/quantities';
+  private editUrl = 'https://student-box-api.site/api/v1/orders/edit/quantities';
+  private quantityUrl = 'https://student-box-api.site/api/v1/orders/quantities';
   constructor(private http: HttpClient) { }
 
   private cartSize = new BehaviorSubject('0');
