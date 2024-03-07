@@ -9,7 +9,7 @@ import { ProductModelServer } from '../models/Product';
 })
 export class ProductsService {
 
-  SERVER_URL = 'https://thestudentbox.co.za/api/v1/products';
+  SERVER_URL = 'https://student-box-api.site/api/v1/products';
 
   constructor(private router: Router, private http: HttpClient) { }
 
