@@ -106,8 +106,10 @@ export class HeaderComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   register() {
+    this.spinner.show();
     this.authService.registerUser(this.registerData).subscribe(
       (res) => {
+        this.spinner.hide();
         localStorage.setItem('token', res.token);
         localStorage.setItem('email', res.email);
         localStorage.setItem('name', res.name);
@@ -115,6 +117,16 @@ export class HeaderComponent implements OnInit {
         localStorage.setItem('id', res._id);
         // this.reset();
         // console.log('Successful');
+        this.toast.success(
+          `${this.registerData.email} successfully logged in.`,
+          'Welcome back!',
+          {
+            timeOut: 1500,
+            progressBar: true,
+            progressAnimation: 'increasing',
+            positionClass: 'toast-top-right',
+          }
+        );
       },
       (err) => {
         // console.log('Failed');

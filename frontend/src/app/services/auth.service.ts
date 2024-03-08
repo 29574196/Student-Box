@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,11 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   registerUser(user: any){
-    return this.http.post<any>(this.registerUrl, user);
+    return this.http.post<any>(`${environment.url}users/register`, user);
   }
 
   loginUser(user: any) {
-    return this.http.post<any>(this.loginUrl, user);
+    return this.http.post<any>(`${environment.url}users/login`, user);
   }
 
   logoutUser() {

@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
         // this.reset();
         console.log('Successful');
         this.toast.success(
-          `${this.loginData.email} successfully logged in.`,
+          `${this.registerData.email} successfully logged in.`,
           'Welcome back!',
           {
             timeOut: 1500,

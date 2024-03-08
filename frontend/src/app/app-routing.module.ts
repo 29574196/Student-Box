@@ -74,7 +74,7 @@ const routes: Routes = [
     component: EssentailsComponent
   },
   {
-    path: 'order-confirmation',
+    path: 'order-confirmation/:id',
     component: SuccessComponent
   },
   {

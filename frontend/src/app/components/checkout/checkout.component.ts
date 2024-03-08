@@ -165,9 +165,9 @@ export class CheckoutComponent implements OnInit {
         localStorage.removeItem('cart');
         let orderArray: any[] = [];
         orderArray.push(res);
-        localStorage.setItem('order', JSON.stringify(orderArray));
+        
 
-        this.router.navigate(['/order-confirmation']);
+        this.router.navigate([`/order-confirmation/${res._id}`]);
       },
       (err) => {
         //dont allow payment

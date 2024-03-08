@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ProductModelServer } from '../models/Product';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,7 @@ export class OrderService {
   }
   // tslint:disable-next-line: typedef
   postOrder(order: any){
-    return this.http.post<any>(this.orderUrl, order);
+    return this.http.post<any>(`${environment.url}orders/order-cash`, order);
   }
 
   editOrder(items: any){
@@ -49,12 +50,12 @@ export class OrderService {
   }
 
   getOrders(){
-    return this.http.get<any[]>(this.ordersUrl);
+    return this.http.get<any[]>(`${environment.url}orders/order`);
   }
 
   getSingleOrder(id: String){
     console.log(id);
-    return this.http.get<any>(this.orderUrl + '/' + id)
+    return this.http.get<any>(`${environment.url}orders/order?id=${id}`)
   }
 
 }
